@@ -4,12 +4,12 @@
 ## Introduction:
 This blog is used to record learning history of Quantum calculation & new programming languages.
 ### Quantum Chemistry
-<html>
+
 <ul>
-  <li>Basic theory<\li>
-  <li>VASP tutorial<\li>
+  <li>Basic theory
+  <li>VASP tutorial
 <\ul>
-<\html>
+
 
 
 ### Markdown
