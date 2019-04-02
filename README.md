@@ -1,9 +1,9 @@
-## Welcome to a fantastic land
-# where cultivate software knowledges and a 'usaki' revering truth
+# Welcome to a fantastic land
+### where cultivate software knowledges and a 'usaki' revering truth
 
 ## Introduction:
 This blog is used to record learning history of Quantum calculation & new programming languages.
-# Quantum Chemistry
+### Quantum Chemistry
 <html>
 <ul>
   <li>Basic theory<\li>
