@@ -1,9 +1,16 @@
 ## Welcome to a fantastic land
-#where cultivate software knowledges and a 'usaki' revering truth
+# where cultivate software knowledges and a 'usaki' revering truth
 
-You can use the [editor on GitHub](https://github.com/neetsaki/neetsaki.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Introduction:
+This blog is used to record learning history of Quantum calculation & new programming languages.
+# Quantum Chemistry
+<html>
+<ul>
+  <li>Basic theory<\li>
+  <li>VASP tutorial<\li>
+<\ul>
+<\html>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
 
@@ -36,3 +43,5 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
