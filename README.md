@@ -8,7 +8,9 @@ This blog is used to record learning history of Quantum calculation & new progra
 <ul>
   <li>Basic theory
   <li>VASP tutorial
-<\ul>
+  <li>Material Studio (MS) tutorial
+  <li>Quantum Expresso (QE) tutorial
+  <li>Graphic User Interface (GUI)
 
 
 
