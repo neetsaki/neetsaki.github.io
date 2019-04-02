@@ -9,7 +9,14 @@ This blog is used to record learning history of Quantum calculation & new progra
   - Material Studio (MS) tutorial
   - Quantum Expresso (QE) tutorial
   - Graphic User Interface (GUI)
+### Molecular dynamics
+  - [Basic Theory]
+  - [LAMMPS Tutorial]
+  - [GROMACs Tutorial]
+  - [GUI collection]
+### Machine Learning assisted Material science
 
+### Programming Language
 
 
 ### Markdown
