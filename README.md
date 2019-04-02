@@ -4,13 +4,11 @@
 ## Introduction:
 This blog is used to record learning history of Quantum calculation & new programming languages.
 ### Quantum Chemistry
-
-<ul>
-  <li>Basic theory
-  <li>VASP tutorial
-  <li>Material Studio (MS) tutorial
-  <li>Quantum Expresso (QE) tutorial
-  <li>Graphic User Interface (GUI)
+  -Basic theory
+  -VASP tutorial
+  -Material Studio (MS) tutorial
+  -Quantum Expresso (QE) tutorial
+  -Graphic User Interface (GUI)
 
 
 
