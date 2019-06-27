@@ -8,6 +8,7 @@ This blog is used to record learning history of Quantum calculation & new progra
   - [VASP tutorial](./QC/VASP_tutorial.html)
   - Material Studio (MS) tutorial
   - Quantum Expresso (QE) tutorial
+  - PWmat tutorial
   - Graphic User Interface (GUI)
 
 ### Molecular dynamics
