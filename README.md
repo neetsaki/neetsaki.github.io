@@ -20,3 +20,6 @@ This blog is used to record learning history of Quantum calculation & new progra
 ### Machine Learning assisted Material science
 
 ### Programming Language
+
+### Experiment Science
+- [Inorganic synthesis](./QC/inorganic_synthesis.html)
