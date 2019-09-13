@@ -23,14 +23,4 @@ This blog is used to record learning history of Quantum calculation & new progra
 
 ### Experiment Science
 - [Inorganic synthesis](./QC/inorganic_synthesis.html)
-<head>
-  <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?834fc57f22ed89bc5ba070736ad07e46";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-</head>
+
