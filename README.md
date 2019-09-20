@@ -22,6 +22,6 @@ This blog is used to record learning history of Quantum calculation & new progra
 ### Programming Language
 
 ### Experiment Science
-- [Inorganic synthesis](./QC/inorganic_synthesis.html)
-- [photonic crystals](./QC/photonic_crystals.html)
+- [Inorganic Synthesis](./QC/inorganic_synthesis.html)
+- [Photonic Crystals](./QC/photonic_crystals.html)
 
