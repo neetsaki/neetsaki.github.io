@@ -13,7 +13,7 @@ This blog is used to record learning history of Quantum calculation & new progra
 
 ### Molecular dynamics
   - [Basic Theory]
-  - [LAMMPS Tutorial]
+  - [LAMMPS Tutorial](./MD/LAMMPS_Tutorial.html)
   - [GROMACs Tutorial]
   - [GUI collection]
 
