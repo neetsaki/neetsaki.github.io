@@ -1,0 +1,707 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>Notebook of papers writing</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --node-fill: #ECECFF; --node-border: #CCCCFF; --cluster-fill: #ffffde; --cluster-border: #aaaa33; --note-fill: #fff5ad; --note-border: #aaaa33; --mermaid-color: var(--text-color); }
+.label { font-family: var(--mermaid-font-family); color: rgb(51, 51, 51); }
+.label text { fill: rgb(51, 51, 51); }
+.node rect, .node circle, .node ellipse, .node polygon { fill: var(--node-fill); stroke: rgb(147, 112, 219); stroke-width: 1px; }
+.node .label { text-align: center; }
+.node.clickable { cursor: pointer; }
+.arrowheadPath { fill: var(--text-color); }
+.edgePath .path { stroke: var(--text-color); stroke-width: 1.5px; }
+.edgeLabel { background-color: rgb(232, 232, 232); text-align: center; }
+.cluster rect { fill: var(--cluster-fill); stroke: var(--cluster-border); stroke-width: 1px; }
+.cluster text { fill: var(--text-color); }
+div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: var(--mermaid-font-family); font-size: 12px; background: var(--cluster-fill); border: 1px solid var(--cluster-border); border-radius: 2px; pointer-events: none; z-index: 100; }
+.actor { stroke: var(--node-border); fill: var(--node-fill); }
+text.actor { fill: black; stroke: none; }
+.actor-line { stroke: grey; }
+.messageLine0 { stroke-width: 1.5; stroke: var(--text-color); }
+.messageLine1 { stroke-width: 1.5; stroke: var(--text-color); }
+#arrowhead { fill: var(--text-color); }
+.sequenceNumber { fill: white; }
+#sequencenumber { fill: var(--text-color); }
+#crosshead path { fill: var(--text-color)  !important; stroke: var(--text-color)  !important; }
+.messageText { fill: var(--text-color); stroke: none; }
+.labelBox { stroke: var(--node-border); fill: var(--node-fill); }
+.labelText { fill: black; stroke: none; }
+.loopText { fill: black; stroke: none; }
+.loopLine { stroke-width: 2; stroke: var(--node-border); }
+.note { stroke: var(--cluster-border); fill: rgb(255, 245, 173); }
+.noteText { fill: black; stroke: none; font-family: var(--mermaid-font-family); font-size: 14px; }
+.activation0 { fill: rgb(244, 244, 244); stroke: rgb(102, 102, 102); }
+.activation1 { fill: rgb(244, 244, 244); stroke: rgb(102, 102, 102); }
+.activation2 { fill: rgb(244, 244, 244); stroke: rgb(102, 102, 102); }
+.mermaid-main-font { font-family: var(--mermaid-font-family); }
+.section { stroke: none; opacity: 0.2; }
+.section0 { fill: rgba(102, 102, 255, 0.49); }
+.section2 { fill: rgb(255, 244, 0); }
+.section1, .section3 { fill: white; opacity: 0.2; }
+.sectionTitle0 { fill: var(--text-color); }
+.sectionTitle1 { fill: var(--text-color); }
+.sectionTitle2 { fill: var(--text-color); }
+.sectionTitle3 { fill: var(--text-color); }
+.sectionTitle { text-anchor: start; font-size: 11px; font-family: var(--mermaid-font-family); }
+.grid .tick { stroke: lightgrey; opacity: 0.3; shape-rendering: crispedges; }
+.grid .tick text { font-family: var(--mermaid-font-family); }
+.grid path { stroke-width: 0; }
+.today { fill: none; stroke: red; stroke-width: 2px; }
+.task { stroke-width: 2; }
+.taskText { text-anchor: middle; font-family: var(--mermaid-font-family); }
+.taskText:not([font-size]) { font-size: 11px; }
+.taskTextOutsideRight { fill: black; text-anchor: start; font-size: 11px; font-family: var(--mermaid-font-family); }
+.taskTextOutsideLeft { fill: black; text-anchor: end; font-size: 11px; }
+.task.clickable { cursor: pointer; }
+.taskText.clickable { cursor: pointer; font-weight: bold; fill: rgb(0, 49, 99) !important; }
+.taskTextOutsideLeft.clickable { cursor: pointer; font-weight: bold; fill: rgb(0, 49, 99) !important; }
+.taskTextOutsideRight.clickable { cursor: pointer; font-weight: bold; fill: rgb(0, 49, 99) !important; }
+.taskText0, .taskText1, .taskText2, .taskText3 { fill: white; }
+.task0, .task1, .task2, .task3 { fill: rgb(138, 144, 221); stroke: rgb(83, 79, 188); }
+.taskTextOutside0, .taskTextOutside2 { fill: black; }
+.taskTextOutside1, .taskTextOutside3 { fill: black; }
+.active0, .active1, .active2, .active3 { fill: rgb(191, 199, 255); stroke: rgb(83, 79, 188); }
+.activeText0, .activeText1, .activeText2, .activeText3 { fill: black !important; }
+.done0, .done1, .done2, .done3 { stroke: grey; fill: lightgrey; stroke-width: 2; }
+.doneText0, .doneText1, .doneText2, .doneText3 { fill: black !important; }
+.crit0, .crit1, .crit2, .crit3 { stroke: rgb(255, 136, 136); fill: red; stroke-width: 2; }
+.activeCrit0, .activeCrit1, .activeCrit2, .activeCrit3 { stroke: rgb(255, 136, 136); fill: rgb(191, 199, 255); stroke-width: 2; }
+.doneCrit0, .doneCrit1, .doneCrit2, .doneCrit3 { stroke: rgb(255, 136, 136); fill: lightgrey; stroke-width: 2; cursor: pointer; shape-rendering: crispedges; }
+.milestone { transform: rotate(45deg) scale(0.8, 0.8); }
+.milestoneText { font-style: italic; }
+.doneCritText0, .doneCritText1, .doneCritText2, .doneCritText3 { fill: black !important; }
+.activeCritText0, .activeCritText1, .activeCritText2, .activeCritText3 { fill: black !important; }
+.titleText { text-anchor: middle; font-size: 18px; fill: black; font-family: var(--mermaid-font-family); }
+g.classGroup text { fill: rgb(147, 112, 219); stroke: none; font-family: var(--mermaid-font-family); font-size: 10px; }
+g.classGroup text .title { font-weight: bolder; }
+g.classGroup rect { fill: var(--node-fill); stroke: rgb(147, 112, 219); }
+g.classGroup line { stroke: rgb(147, 112, 219); stroke-width: 1; }
+.classLabel .box { stroke: none; stroke-width: 0; fill: var(--node-fill); opacity: 0.5; }
+.classLabel .label { fill: rgb(147, 112, 219); font-size: 10px; }
+.relation { stroke: rgb(147, 112, 219); stroke-width: 1; fill: none; }
+#compositionStart { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#compositionEnd { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#aggregationStart { fill: var(--node-fill); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#aggregationEnd { fill: var(--node-fill); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#dependencyStart { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#dependencyEnd { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#extensionStart { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
+#extensionEnd { fill: rgb(147, 112, 219); stroke: rgb(147, 112, 219); stroke-width: 1; }
+.commit-id, .commit-msg, .branch-label { fill: lightgrey; color: lightgrey; font-family: var(--mermaid-font-family); }
+.pieTitleText { text-anchor: middle; font-size: 25px; fill: black; font-family: var(--mermaid-font-family); }
+.slice { font-family: var(--mermaid-font-family); }
+g.stateGroup text { fill: rgb(147, 112, 219); stroke: none; font-size: 10px; font-family: var(--mermaid-font-family); }
+g.stateGroup text { fill: rgb(147, 112, 219); stroke: none; font-size: 10px; }
+g.stateGroup .state-title { font-weight: bolder; fill: black; }
+g.stateGroup rect { fill: var(--node-fill); stroke: rgb(147, 112, 219); }
+g.stateGroup line { stroke: rgb(147, 112, 219); stroke-width: 1; }
+.transition { stroke: rgb(147, 112, 219); stroke-width: 1; fill: none; }
+.stateGroup .composit { fill: white; border-bottom: 1px; }
+.state-note { stroke: var(--cluster-border); fill: rgb(255, 245, 173); }
+.state-note text { fill: black; stroke: none; font-size: 10px; }
+.stateLabel .box { stroke: none; stroke-width: 0; fill: var(--node-fill); opacity: 0.5; }
+.stateLabel text { fill: black; font-size: 10px; font-weight: bold; font-family: var(--mermaid-font-family); }
+.node text { font-size: 14px; }
+div.mermaidTooltip { position: absolute; text-align: center; max-width: 200px; padding: 2px; font-family: var(--mermaid-font-family); font-size: 12px; background: var(--cluster-fill); border: 1px solid var(--cluster-border); border-radius: 2px; pointer-events: none; z-index: 100; }
+#write .md-diagram-panel .md-diagram-panel-preview div { width: initial; }
+
+
+:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h2><a name="notebook-of-papers-writing" class="md-header-anchor"></a><span>Notebook of papers writing</span></h2><h3><a name="chapter-1-course-recording" class="md-header-anchor"></a><span>Chapter 1 Course Recording</span></h3><ol><li><p><span>论文的结构：</span></p><p><span>三段：Introduction+【Objective,  Method, Results】+【Discussion&amp;Conclusion】</span></p><blockquote><p><span>Conclusion=Outroduciton</span></p></blockquote><p><span>前后两段需用议论文思路写：</span></p><ul><li><span>前者为了论证研究目标的合理性（review）</span></li><li><span>后者为了论证研究结果的价值</span></li></ul><p><span>中间部分用说明文思路写</span></p></li><li><p><span>引言部分：</span></p><p><span>分为相互对应的两大段</span></p><div class="md-diagram-panel"><svg id="mermaidChart872" width="327.435546875" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="-10 -10 224.95703125 174.71875"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g></g><defs><marker id="extensionStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 1,7 L18,13 V 1 Z"></path></marker></defs><defs><marker id="extensionEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 1,1 V 13 L18,7 Z"></path></marker></defs><defs><marker id="compositionStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="compositionEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="aggregationStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="aggregationEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="dependencyStart" class="extension" refX="0" refY="7" markerWidth="190" markerHeight="240" orient="auto"><path d="M 5,7 L9,13 L1,7 L9,1 Z"></path></marker></defs><defs><marker id="dependencyEnd" refX="19" refY="7" markerWidth="20" markerHeight="28" orient="auto"><path d="M 18,7 L9,13 L14,7 L9,1 Z"></path></marker></defs><g id="mermaidChart872classId2" class="classGroup" transform="translate(21.421875,0 )"><rect x="0" y="0" width="52.828125" height="47.359375"></rect><text y="15" x="0"><tspan class="title" x="5">Problem</tspan></text><line x1="0" y1="23.34375" y2="23.34375" x2="52.828125"></line><text x="5" y="33.34375" fill="white" class="classText"><tspan x="5">已知</tspan></text><line x1="0" y1="41.6875" y2="41.6875" x2="52.828125"></line><text x="5" y="56.6875" fill="white" class="classText"></text></g><g id="mermaidChart872classId3" class="classGroup" transform="translate(0,97.359375 )"><rect x="0" y="0" width="75.671875" height="57.359375"></rect><text y="15" x="0"><tspan class="title" x="14.953125">Question</tspan></text><line x1="0" y1="23.34375" y2="23.34375" x2="75.671875"></line><text x="5" y="33.34375" fill="white" class="classText"><tspan x="5">应知</tspan><tspan x="5" dy="10">确立研究机会</tspan></text><line x1="0" y1="51.6875" y2="51.6875" x2="75.671875"></line><text x="5" y="66.6875" fill="white" class="classText"></text></g><g id="mermaidChart872classId0" class="classGroup" transform="translate(140.63671875,109.03125 )"><rect x="0" y="0" width="32.96875" height="34.015625"></rect><text y="15" x="0"><tspan class="title" x="5">Goal</tspan></text><line x1="0" y1="23.34375" y2="23.34375" x2="32.96875"></line><text x="5" y="33.34375" fill="white" class="classText"></text><line x1="0" y1="28.34375" y2="28.34375" x2="32.96875"></line><text x="5" y="43.34375" fill="white" class="classText"></text></g><g id="mermaidChart872classId1" class="classGroup" transform="translate(129.28515625,0 )"><rect x="0" y="0" width="75.671875" height="47.359375"></rect><text y="15" x="0"><tspan class="title" x="13.9765625">Objective</tspan></text><line x1="0" y1="23.34375" y2="23.34375" x2="75.671875"></line><text x="5" y="33.34375" fill="white" class="classText"><tspan x="5">占领这个机会</tspan></text><line x1="0" y1="41.6875" y2="41.6875" x2="75.671875"></line><text x="5" y="56.6875" fill="white" class="classText"></text></g><path d="M42.971549761274275,47.359375L42.11561438439523,51.526041666666664C41.25967900751618,55.692708333333336,39.54780825375809,64.02604166666667,38.691872876879046,72.359375C37.8359375,80.69270833333333,37.8359375,89.02604166666667,37.8359375,93.19270833333333L37.8359375,97.359375" id="edge237" class="relation" marker-end="url(#extensionEnd)"></path><path d="M73.2086599512518,47.359375L77.67323225104316,51.526041666666664C82.13780455083453,55.692708333333336,91.06694915041726,64.02604166666667,102.30495895020863,74.55762751584153C113.54296875,85.0892133650164,127.08984375,97.81905173003281,133.86328125,104.18397091254103L140.63671875,110.54889009504923" id="edge238" class="relation" marker-end="url(#extensionEnd)"></path><path d="M167.12109375,47.359375L167.12109375,51.526041666666664C167.12109375,55.692708333333336,167.12109375,64.02604166666667,165.98249189680055,74.3046875C164.84389004360114,84.58333333333333,162.56668633720224,96.80729166666667,161.42808448400282,102.91927083333333L160.28948263080338,109.03125" id="edge239" class="relation" marker-start="url(#extensionStart)"></path></svg></div><p><span>分两段：</span></p><ul><li><span>第一段以一个大问题开始到研究一个研究空白结束（从普遍problem[-solution]到具体question-[answer]）</span></li><li><span>第二段以我们具体的研究目标作为研究空白的解答，从而占领这个机会。完整的目标描述，不仅包括本文目标（objective）与长期目标（goal），与前面二者遥相呼应</span></li><li><span>两段的内在逻辑有联系</span></li></ul><p><span>搭一座桥，联系读者与我们的论文，以读者已经接受的观念切入，逐步加入相关文献的未知内容，最后达到让读者认可我们的研究目标</span></p><p><span>模板：问题X的重要性已被学术界广泛认可。研究者A发现了。。研究者B发现了。。。基于这些理由我们认为回答问题C对解决问题X至关重要。</span></p><blockquote><p><span>High-entropy alloys (HEAs) are attracting an academic interest for their promising properties as structural materials.1 Particularly, the equiatomic CoCrFeMnNi HEAs have been reported to possess a wide-range of promising properties such as good high-temperature structural stability and an excellent balance between strength and ductility, particularly at cryogenic temperatures, typically 77 K, the liquid nitrogen temperature. Even though most HEAs have equiatomic or near equiatomic compositions, it is believed that the equiatomic composition would not be the optimum composition for a wide range of material properties.5–10 To improve a specific material property, one may have to change the alloy composition from the equiatomic composition. Indeed, there have been many efforts to improve the facecentered cubic (fcc) single-phase stability or mechanical properties of the CoCrFeMnNi HEAs by adjusting the composition. However, for an efficient alloy design, one would need to understand the reason for the typical HEA properties and the effect of individual elements on them.</span>
+<span>Sluggish diffusion,11–13 severe lattice distortion14 and microtwinning2–4,8,15 have been mentioned as probable reasons for the typical HEA properties. However, exact mechanisms for such structural reasons are not clearly known yet. For example, the variety of the surrounding atoms of each lattice site and the existence of low-energy sites that may serve as vacancy trap sites</span>
+<span>have been mentioned as a probable reason for the sluggish diffusion.11 However, the distribution and amount of such trap sites need further investigation. Similarly, the quantitative effect of severe lattice distortion on solid solution hardening is not known yet and the reason why the micro-twinning is activated, particularly at 77 K, has not been explained yet either. The fact  that the physical metallurgical mechanisms related to individual properties are mostly not clarified limits wider industrial applications of HEAs, in addition to the high alloy costs, even with the good combination of engineering properties.</span>
+<span>The diffusion, strengthening and plastic deformation are all atomic-level materials phenomena that have origins on an atomic scale. Experimental analyses of atomic-level materials phenomena</span>
+<span>are not trivial, while large-scale atomistic simulation techniques based on semi-empirical interatomic potentials can be an efficient tool for atomic-scale analyses. A bottleneck in the atomistic simulation approach would be the availability of reliable interatomic potential for the relevant alloy systems.</span>
+<span>An atomistic simulation on a multicomponent alloy system requires at least interatomic potentials for all the constituent binary alloy systems. Recently, interatomic potentials for all constituent binary systems of the CoCrFeMnNi HEA system became available with a second nearest-neighbor modified embedded-atom method (2NN MEAM) potential formalism,16 as a result of a long-term research effort of the present authors’ group. The necessary unary and binary potential parameters were determined by fitting to known fundamental material properties of relevant materials and already published.17–24 Ternary parameters were given default assumed values in the present work to complete the interatomic potential for the five-component alloy system. Therefore, using atomistic simulation techniques based on the 2NN MEAM potential, the goal in the present study was to clarify fundamental reasons for sluggish diffusion and microtwining at cryogenic temperatures and to investigate the effect of individual elements on those properties as well as on solid solution hardening. We used a Canonical Monte Carlo (CMC) simulation, molecular dynamics (MD) simulation and a 0 K molecular statics simulation to examine the equilibrium atomic.</span></p></blockquote><p>&nbsp;</p></li><li><p><span>如何从广泛的Problem中选择一个好的Question：</span></p><p><span>研究选题的三种途径：</span></p><ul><li><span>填补研究空白：Old Problem 其重要性已经有目共睹，需要强调创新点，或者是新的解决方案，或者从其他领域借鉴的方法，了解前人的研究有哪些以及</span><strong><span>论成</span></strong><span>我们的研究与前人的研究有哪些不同（填补所有工作之漏洞为大成，他人无路可走）</span></li><li><span>延伸现有研究：New Problem 追踪某个研究的历史，整理整个研究领域的研究脉络，着重本步骤在完成长期目标中的意义，</span><strong><span>论成</span></strong><span>新的问题在完成某个长期目标中的贡献（开辟无数新的研究机会为大成，他人追随而至）</span></li><li><span>复制成功的研究：不同的样本/不同的变量范围内，注意所有的前提假设以及自己的条件，避免复制错误</span></li></ul><p><span>好的研究课题</span></p><ul><li><span>必须具体可行，不应有任何先入为主的假设，适合现有的资源条件</span></li></ul><ul><li><span>开放，可讨论（可证伪性）</span></li></ul><ul><li><span>激发创新</span></li></ul></li><li><p><span> 如何确立研究目标：</span></p><div class="md-diagram-panel"><svg id="mermaidChart873" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 1173.1015625px;" viewBox="0 0 1173.1015625 402"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M482.578125,205.5L507.578125,205.5L532.578125,205.5" marker-end="url(#arrowhead11552)" style="fill:none"></path><defs><marker id="arrowhead11552" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M662.3046875,48L710.625,48L779.5324346848593,162.59256531514072" marker-end="url(#arrowhead11553)" style="fill:none"></path><defs><marker id="arrowhead11553" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M392.81163194444446,177.5L507.578125,126.75L609.1015625,126.75L710.625,126.75L767.697826209541,174.427173790459" marker-end="url(#arrowhead11554)" style="fill:none"></path><defs><marker id="arrowhead11554" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M685.625,205.5L710.625,205.5L736.125,206" marker-end="url(#arrowhead11555)" style="fill:none"></path><defs><marker id="arrowhead11555" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M782.0727445397434,251.94774453974338L710.625,390.25L609.1015625,390.25L507.578125,390.25L356.4822077976996,233.5" marker-end="url(#arrowhead11556)" style="fill:none"></path><defs><marker id="arrowhead11556" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M854.5604074678879,185.5682199678879L899.4921875,166.125L941.0234375,166.125" marker-end="url(#arrowhead11557)" style="fill:none"></path><defs><marker id="arrowhead11557" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M662.3046875,311.5L710.625,311.5L772.8451964491045,242.7201964491045" marker-end="url(#arrowhead11558)" style="fill:none"></path><defs><marker id="arrowhead11558" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M1017.1015625,166.125L1058.6328125,166.125L1083.6328125,179.84750054454366" marker-end="url(#arrowhead11559)" style="fill:none"></path><defs><marker id="arrowhead11559" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M1083.6328125,231.15249945545634L1058.6328125,244.875L979.0625,244.875L899.4921875,244.875L854.5604074678879,226.4317800321121" marker-end="url(#arrowhead11560)" style="fill:none"></path><defs><marker id="arrowhead11560" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M126.40625,166.125L151.40625,166.125L202.85329861111111,177.5" marker-end="url(#arrowhead11561)" style="fill:none"></path><defs><marker id="arrowhead11561" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M126.40625,272.125L151.40625,272.125L254.64931695590994,233.5" marker-end="url(#arrowhead11562)" style="fill:none"></path><defs><marker id="arrowhead11562" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(609.1015625,126.75)" style="opacity: 1;"><g transform="translate(-64.2421875,-15.75)" class="label"><foreignObject width="128.484375" height="31.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>Introduction</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(609.1015625,390.25)" style="opacity: 1;"><g transform="translate(-57.09375,-15.75)" class="label"><foreignObject width="114.1875" height="31.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>Conclusion</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(979.0625,244.875)" style="opacity: 1;"><g transform="translate(-54.5703125,-15.75)" class="label"><foreignObject width="109.1484375" height="31.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>Discussion</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(329.4921875,205.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-153.0859375" y="-28" width="306.171875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-143.0859375,-18)"><foreignObject width="286.171875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Fundemental Problem-Goal</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(609.1015625,205.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-76.5234375" y="-28" width="153.046875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-66.5234375,-18)"><foreignObject width="133.0546875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Critical Need</div></foreignObject></g></g></g><g class="node" id="H" transform="translate(609.1015625,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-28" width="106.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-18)"><foreignObject width="86.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">自身条件</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(805.05859375,205.5)" style="opacity: 1;"><polygon points="69.43359375,0 138.8671875,-69.43359375 69.43359375,-138.8671875 0,-69.43359375" transform="translate(-69.43359375,69.43359375)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-39.1484375,-18)"><foreignObject width="78.3046875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Objects</div></foreignObject></g></g></g><g class="node" id="D" transform="translate(979.0625,166.125)" style="opacity: 1;"><rect rx="0" ry="0" x="-38.0390625" y="-28" width="76.078125" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-28.0390625,-18)"><foreignObject width="56.0859375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Tasks</div></foreignObject></g></g></g><g class="node" id="I" transform="translate(609.1015625,311.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-28" width="106.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-18)"><foreignObject width="86.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">小处着手</div></foreignObject></g></g></g><g class="node" id="E" transform="translate(1130.3671875,205.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-46.734375" y="-28" width="93.46875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-36.734375,-18)"><foreignObject width="73.4765625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Results</div></foreignObject></g></g></g><g class="node" id="F" transform="translate(73.203125,166.125)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-28" width="106.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-18)"><foreignObject width="86.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">大处着眼</div></foreignObject></g></g></g><g class="node" id="G" transform="translate(73.203125,272.125)" style="opacity: 1;"><rect rx="0" ry="0" x="-53.203125" y="-28" width="106.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-18)"><foreignObject width="86.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">市场需求</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>手头做的小事（block）与心中大事（building）结合起来，仰望天空与脚踏实地</span></p><p><span>明确长远目标时候关注市场需求——科学基金</span></p></li><li><p><span>如何做文献综述（review）：</span></p><p><span>两个基本点：</span></p><ul><li><p><span>学：包括</span><strong><span>所有相关</span></strong><span>的</span><strong><span>主要</span></strong><span>文献——全、新、客观</span></p></li><li><p><span>思：</span></p><ul><li><p><span>评判</span></p><ul><li><span>Validity，Reliability</span></li><li><span>Strength，Weakness</span></li><li><span>Significance，Relevance</span></li></ul></li><li><p><span>分析</span></p><ul><li><span>归纳，找共同点</span></li><li><span>演绎，找不同点</span></li><li><span>溯因，找Gap</span></li></ul></li></ul></li><li><p><span>“六经注我”而非“我注六经”，注意阅读论文如何为自己的研究所用</span></p></li></ul></li><li><p><span> 阅读文献的两个阶段：</span></p><div class="md-diagram-panel"><svg id="mermaidChart874" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 656.453125px;" viewBox="0 0 656.453125 198"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M76.76909722222223,103L108.21875,68L133.21875,68" marker-end="url(#arrowhead11585)" style="fill:none"></path><defs><marker id="arrowhead11585" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M83.21875,125.41622964394148L108.21875,121L187.21875,152.67096087932867" marker-end="url(#arrowhead11586)" style="fill:none"></path><defs><marker id="arrowhead11586" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M187.21875,174L108.21875,174L83.21875,155.01021253105162" marker-end="url(#arrowhead11587)" style="fill:none"></path><defs><marker id="arrowhead11587" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M347.625,68L372.625,68L397.625,68" marker-end="url(#arrowhead11588)" style="fill:none"></path><defs><marker id="arrowhead11588" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M460.84375,56.83245928788297L485.84375,48L532.4453125,48" marker-end="url(#arrowhead11589)" style="fill:none"></path><defs><marker id="arrowhead11589" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M532.4453125,58.6614481409002L485.84375,68L460.84375,68" marker-end="url(#arrowhead11590)" style="fill:none"></path><defs><marker id="arrowhead11590" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M447.66533430232556,96L485.84375,154L510.84375,154" marker-end="url(#arrowhead11591)" style="fill:none"></path><defs><marker id="arrowhead11591" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(51.609375,131)" style="opacity: 1;"><rect rx="5" ry="5" x="-31.609375" y="-28" width="63.21875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.609375,-18)"><foreignObject width="43.21875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">泛读</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(240.421875,68)" style="opacity: 1;"><rect rx="0" ry="0" x="-107.203125" y="-28" width="214.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-97.203125,-18)"><foreignObject width="194.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">明确和细化研究目标</div></foreignObject></g></g></g><g class="node" id="E" transform="translate(240.421875,174)" style="opacity: 1;"><rect rx="5" ry="5" x="-53.203125" y="-28" width="106.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-18)"><foreignObject width="86.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">由厚到薄</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(429.234375,68)" style="opacity: 1;"><rect rx="5" ry="5" x="-31.609375" y="-28" width="63.21875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.609375,-18)"><foreignObject width="43.21875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">精读</div></foreignObject></g></g></g><g class="node" id="F" transform="translate(585.6484375,48)" style="opacity: 1;"><rect rx="5" ry="5" x="-53.203125" y="-28" width="106.40625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-43.203125,-18)"><foreignObject width="86.4140625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">由薄到厚</div></foreignObject></g></g></g><g class="node" id="D" transform="translate(585.6484375,154)" style="opacity: 1;"><rect rx="0" ry="0" x="-74.8046875" y="-28" width="149.609375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-64.8046875,-18)"><foreignObject width="129.609375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">搜集可用数据</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>第一阶段（唯快不破）</span></p><ul><li><span>从课本与综述入手该领域</span></li><li><span>先读摘要与引言，如有必要再读结果与结论</span></li><li><span>目光放大，切忌被低质量论文和不必要的细节牵制</span></li><li><span>最终目的是为了找寻我们研究目标的</span><strong><span>合理性</span></strong><span>与</span><strong><span>重要性</span></strong></li></ul><p><span>下一阶段需对文献库进行精选和排序（注重根基）</span></p><ul><li><span>读得全，读得细</span></li><li><span>为了搜寻能够回答我们研究问题的证据而读</span></li><li><span>挖掘文章背后的价值（某些前提与假设）</span></li><li><span>区分事实与假设</span></li></ul></li><li><p><span>文献阅读“三要”与“三不要”</span></p><p><span>三不要：</span></p><ul><li><span>无选择的精读</span></li><li><span>只读不写</span></li><li><span>资料来源不清（防止要引用时找不到）</span></li></ul><p><span>三个方法：</span></p><ul><li><p><span>列表法</span></p><figure><table><thead><tr><th>&nbsp;</th><th><span>信息点1</span></th><th><span>信息点2</span></th></tr></thead><tbody><tr><td><span>文献A</span></td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td><span>文献B</span></td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><p><span>使用方法/不同结论</span></p></li><li><p><span>画圈法：画graph LR，明确论证思路与结构</span></p></li><li><p><span>自加摘要法</span></p></li></ul></li><li><p><span>如何“讲故事”——文章写作的故事逻辑</span></p><p><span>四个基本元素：</span></p><ul><li><span>Situation 情境</span></li><li><span>Confliction 冲突</span></li><li><span>Question 关键问题</span></li><li><span>Answer 解决方案</span></li></ul><p><span>彼此组合法：</span></p><ul><li><span>Background, History (S)</span></li><li><span>Problem, Challenges (C1)</span></li><li><span>Attempted solutions (Q1,A1)</span></li><li><span>Experience, Failures (C2)</span></li><li><span>Modified solution Significance (Q2,A2)</span></li><li><span>Remain Problem(C)</span></li></ul><p><span>开门见山：QACS，QASC</span></p><p><span>冲击力：CSQA</span></p></li><li><p><span> 文献分析的三种逻辑方法：</span></p><ul><li><span>归纳法（Inductive）：由点到线——新规律</span></li><li><span>演绎法（Deductive）：由线到点——新证据</span></li><li><span>溯因（Abductive）：由点到虚线——新假设</span></li></ul></li><li><p><span> 如何从文献出发得到自己的论点</span></p><div class="md-diagram-panel"><svg id="mermaidChart875" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 1380.03125px;" viewBox="0 0 1380.03125 229.5"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M223.5625,48L248.5625,48L273.5625,49.82857142857143" marker-end="url(#arrowhead11621)" style="fill:none"></path><defs><marker id="arrowhead11621" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M497,58L522,58L547,62.25675675675676" marker-end="url(#arrowhead11622)" style="fill:none"></path><defs><marker id="arrowhead11622" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M867,89.5L892,89.5L976.8430129716982,114.5" marker-end="url(#arrowhead11623)" style="fill:none"></path><defs><marker id="arrowhead11623" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M1226.734375,142.5L1251.734375,142.5L1277.234375,143" marker-end="url(#arrowhead11624)" style="fill:none"></path><defs><marker id="arrowhead11624" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M153.390625,164.43227754498398L248.5625,101L296.25508720930236,86" marker-end="url(#arrowhead11625)" style="fill:none"></path><defs><marker id="arrowhead11625" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M153.390625,174.77914715306878L248.5625,142.5L385.28125,142.5L522,142.5L609.2641509433962,117.5" marker-end="url(#arrowhead11626)" style="fill:none"></path><defs><marker id="arrowhead11626" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M153.390625,190.4864431846192L248.5625,205.5L385.28125,205.5L522,205.5L675.390625,205.5" marker-end="url(#arrowhead11627)" style="fill:none"></path><defs><marker id="arrowhead11627" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M738.609375,205.5L892,205.5L991.9262152777778,170.5" marker-end="url(#arrowhead11628)" style="fill:none"></path><defs><marker id="arrowhead11628" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(121.78125,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-101.78125" y="-28" width="203.5625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-91.78125,-18)"><foreignObject width="183.5625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">分解问题-problem</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(385.28125,58)" style="opacity: 1;"><rect rx="5" ry="5" x="-111.71875" y="-28" width="223.4375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-101.71875,-18)"><foreignObject width="203.4375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">正方观点-Solution A</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(707,89.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-160" y="-28" width="320" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-150,-18)"><foreignObject width="300" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">反方观点 Argument against A</div></foreignObject></g></g></g><g class="node" id="D" transform="translate(1071.8671875,142.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-154.8671875" y="-28" width="309.734375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-144.8671875,-18)"><foreignObject width="289.734375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">关键补充或提升-Our solution</div></foreignObject></g></g></g><g class="node" id="E" transform="translate(1330.3828125,142.5)" style="opacity: 1;"><polygon points="53.6484375,0 107.296875,-53.6484375 53.6484375,-107.296875 0,-53.6484375" transform="translate(-53.6484375,53.6484375)"></polygon><g class="label" transform="translate(0,0)"><g transform="translate(-21.609375,-18)"><foreignObject width="43.21875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">结论</div></foreignObject></g></g></g><g class="node" id="F" transform="translate(121.78125,185.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.609375" y="-28" width="63.21875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.609375,-18)"><foreignObject width="43.21875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">平衡</div></foreignObject></g></g></g><g class="node" id="G" transform="translate(707,205.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-31.609375" y="-28" width="63.21875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-21.609375,-18)"><foreignObject width="43.21875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">打破</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>为读者考虑，帮助读者理解，建立其自己的思想</span></p><p><span>拆分不同问题</span></p><p><span>第二段与第三段分别介绍正方观点与反方观点，第四段去打破这个平衡（大家都认为复杂，你认为简单；大家认为重要，你认为次要，因为有更重要的，主要在于切入角度不同，可以推翻过去的假设，发现其他人没有发发现的问题）</span></p><p><span>展现考虑问题的全面性和客观性但最后需点出自己的看法，从而影响读者的观点</span></p></li><li><p><span>如何用结构化思维构建文章</span></p><p><span>向下分类用MECE (</span><strong><span>M</span></strong><span>utually </span><strong><span>E</span></strong><span>xclusive </span><strong><span>C</span></strong><span>ollectively </span><strong><span>E</span></strong><span>xhaustive) 相互独立、完全穷尽</span></p><p><span>向上分类用最小容器法：共性作为容器容纳所有结果</span></p><p><span>结论：</span></p><ul><li><span>目标合理</span></li><li><span>方法靠谱</span></li><li><span>结果有意义</span></li></ul><p><span>三层的pyramid结构：以上三条一般为文章的小标题</span></p><p><span>简练文字，详实内容与层次，希望每个观点有不同方面的支撑（最少文字最多意思）</span></p></li><li><p><span> 如何分解与精选研究目标：</span></p><p><span>找到核心矛盾——A--B</span></p><p><span>将核心矛盾转化为更容易解决的</span></p><p><span>将矛盾按pyramid模式分解，转化为要素的问题</span></p></li><li><p><span> 通过文献检索细化研究目标</span></p><div class="md-diagram-panel"><svg id="mermaidChart876" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 1158.9375px;" viewBox="0 0 1158.9375 122.75"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M342.15625,52.23209337475859L367.15625,48L392.15625,48" marker-end="url(#arrowhead11652)" style="fill:none"></path><defs><marker id="arrowhead11652" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M612.03125,48L666.6875,48L721.34375,48" marker-end="url(#arrowhead11653)" style="fill:none"></path><defs><marker id="arrowhead11653" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M933.078125,48L958.078125,48L983.078125,54.852015498606484" marker-end="url(#arrowhead11654)" style="fill:none"></path><defs><marker id="arrowhead11654" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M983.078125,104.14798450139352L958.078125,111L827.2109375,111L666.6875,111L502.09375,111L367.15625,111L342.15625,106.76790662524141" marker-end="url(#arrowhead11655)" style="fill:none"></path><defs><marker id="arrowhead11655" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(666.6875,111)" style="opacity: 1;"><g transform="translate(-29.65625,-15.75)" class="label"><foreignObject width="59.3203125" height="31.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>refine</span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(181.078125,79.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-161.078125" y="-28" width="322.15625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-151.078125,-18)"><foreignObject width="302.15625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Conceptualize draft objective</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(502.09375,48)" style="opacity: 1;"><rect rx="5" ry="5" x="-109.9375" y="-28" width="219.875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-99.9375,-18)"><foreignObject width="199.875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Search by concepts</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(827.2109375,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-105.8671875" y="-28" width="211.734375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-95.8671875,-18)"><foreignObject width="191.7421875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Evaluate resources</div></foreignObject></g></g></g><g class="node" id="D" transform="translate(1073.0078125,79.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-89.9296875" y="-28" width="179.859375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-79.9296875,-18)"><foreignObject width="159.8671875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Explore aspects</div></foreignObject></g></g></g></g></g></g></svg></div><ul><li><p><span>把Question分解为Concepts（提取关键概念），读课本/文献获取概念</span></p></li><li><p><span>搜索相似概念</span><code>(A1 or A2 or A3) and (B1 or B2 or B3)</code></p></li><li><p><span>评估Key players</span></p><ul><li><span>Researcher：重要研究人员/小组</span></li><li><span>Journals：重要的学术刊物</span></li></ul><p><span>评估How many</span></p><ul><li><span>Literature:</span></li><li><span>Our own resource: 确定是否对现有目标进一步细化</span></li></ul></li><li><p><span>may be used to further focus on the topic</span></p></li></ul></li><li><p><span>如何具体地定义和描述我们的研究目标</span></p><div class="md-diagram-panel"><svg id="mermaidChart877" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 301.546875px;" viewBox="0 0 301.546875 72"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M137.65625,48L162.65625,48L187.65625,48" marker-end="url(#arrowhead11662)" style="fill:none"></path><defs><marker id="arrowhead11662" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="B" transform="translate(78.828125,48)" style="opacity: 1;"><rect rx="5" ry="5" x="-58.828125" y="-28" width="117.65625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48.828125,-18)"><foreignObject width="97.6640625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Objective</div></foreignObject></g></g></g><g class="node" id="A" transform="translate(246.6015625,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-58.9453125" y="-28" width="117.890625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-48.9453125,-18)"><foreignObject width="97.8984375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Goal/Aim</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>有方向+有边界（方法+结论）</span></p><p><span>需要两句话（至少），一句定义我们的研究目标，一句定义研究目标对长远目的的贡献</span></p><p><span>如：确定变量A在某个条件下是否对变量B起作用，我们研究这个可促进对变量B的理解</span></p><p><span>明确指出本工作包括那些内容，对研究方法和可得出的结论需要有清楚认识（有边界，完成度）</span></p><p><span>常用词：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">determine, estimate, identify, define, establish, collect, construct, creat, formulate</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>尽量不用的词：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">study, investigate, hope, seek, try</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">#不具体，没有边界，语气不强，不可信/不自信</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 45px;"></div><div class="CodeMirror-gutters" style="display: none; height: 45px;"></div></div></div></pre><p><span>Examples 1：</span></p><ul><li><p><strong><span>Weak</span></strong><span>——&quot;Our objective is to </span><code>study</code><span> the </span><u><span>effects</span></u><span> of family environment and language skills on preparedness for kindergarten&quot;</span></p><p><span>study强调动作本身而非结果</span></p></li><li><p><strong><span>Stronger</span></strong><span>——&quot;Our objective is to </span><code>determine</code><span> the </span><u><span>key factors</span></u><span> that predict success or failure in transition from preschool to kindergarten&quot;</span></p></li></ul><p><span>Example 2：</span></p><ul><li><strong><span>Weak</span></strong><span>——&quot;Our objective in this application is to </span><code>access</code><span> whether ground penetrating radar and impact echo techniques can be used to detect structural defects in concrete.&quot;（只是验证一种假说，弱化了研究目标本来具有的例子）</span></li><li><strong><span>Stronger</span></strong><span>——&quot;Our objective in this application is to </span><code>develop</code><span> improved </span><u><span>non-destructive</span></u><span> diagnostic procedures for detection of delamination and void defects in reinforced concrete structure.&quot; (更好与目标结合)</span></li></ul><p><span>Example 3：</span></p><ul><li><strong><span>Goal</span></strong><span>: Design strategies for reinforced concrete structures with optimal safety features</span></li><li><strong><span>Objective</span></strong><span>: Develop improved non-destructive diagnostic procedures to detect structural flaws in concrete</span></li><li><strong><span>Hypothesis</span></strong><span>: Application of ground penetrating radar and impact echo techniques will allow accurate non-destructive detection of flaws in concrete structures.</span></li></ul><p><span>Example 4：</span></p><ul><li><strong><span>Goal</span></strong><span>: Develop novel and effective therapeutic intervention strategies for the treatment of cancer that are based upon natural remedies</span></li><li><strong><span>Objective</span></strong><span>: Determine the molecular mechanisms of action and therapeutic efficacy of Crocetin in inhibition of prostate cancel cell metastases</span></li><li><strong><span>Hypothesis</span></strong><span>: Crocetin specifically inhibits C1q-dependent signaling pathway leading to cell migration by ...</span></li><li><strong><span>Rationale</span></strong><span>: Development of Scientifically-based evidence to support a therapeutics benefit of Crocetin would provide a </span><u><span>foundation</span></u><span> for Phase 1/Phase 2 clinical trails to test potential benefits in cancer patients (联系Goal与Objective的关系)</span></li></ul></li><li><p><span>如何用写文献综述：</span></p><div class="md-diagram-panel"><svg id="mermaidChart878" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 993.09375px;" viewBox="0 0 993.09375 72"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M339.4375,48L364.4375,48L389.4375,48" marker-end="url(#arrowhead11674)" style="fill:none"></path><defs><marker id="arrowhead11674" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M684.40625,48L709.40625,48L734.40625,48" marker-end="url(#arrowhead11675)" style="fill:none"></path><defs><marker id="arrowhead11675" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="A" transform="translate(179.71875,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-159.71875" y="-28" width="319.4375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-149.71875,-18)"><foreignObject width="299.4375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">General Problem 已知, 重要性</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(536.921875,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-147.484375" y="-28" width="294.96875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-137.484375,-18)"><foreignObject width="274.96875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Specific question 未知 细节</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(865.75,48)" style="opacity: 1;"><rect rx="0" ry="0" x="-131.34375" y="-28" width="262.6875" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-121.34375,-18)"><foreignObject width="242.6953125" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">Research objective 应知</div></foreignObject></g></g></g></g></g></g></svg></div><p><span>Example: The optimal container size in automated warehouse</span></p><ul><li><strong><span>General problem</span></strong><span>: Automated storage and retrieval systems (AS/RS) are being introduced into the industry and warehousing at a increasing rate ... 使用有影响力的文献，阐述重要性</span></li><li><strong><span>Specific Question</span></strong><span>: Several researchers addressed the problem of the optimal handling unit (pallet or container) size, to be used in material handling and warehousing systems ... Nevertheless, container size was found to affect strongly overall warehousing costs. 密切相关的文献，论证一个论点 （归纳法）</span></li><li><strong><span>Research objective</span></strong><span>: In this paper, we present an analytical framework for approximating the optimal size of a warehouse container ...阐述研究目标</span></li></ul></li><li><p><span>如何使用批判性思维阅读文献：</span></p><ul><li><p><span>客观评价（Why/How）——&gt;是否可信（Validity &amp; Reliability）</span></p><ul><li><p><span>事实</span></p></li><li><p><span>观点（证据，逻辑）</span></p><ul><li><span>归纳：证据的充分度</span></li><li><span>演绎：隐含假设</span></li></ul></li></ul><p><span>批判别人（新信息）</span></p></li><li><p><span>主观判断（If）——&gt;是否可用（Significance &amp; Relevance）</span></p><p><span>批判自己（旧信息）</span></p></li></ul></li><li><p><span>论文结果、讨论与结论的写作要点：</span></p><ul><li><p><code>Results</code><span>: 分类分层（突出关键，适当均衡）两个一致（内容与方法，描述与图表）</span></p><p><span>简练客观平实，少用转折，尽量用简单的语句。</span></p><p><span>突出有科学性与代表性数据</span></p><p><span>文字对图表进行凝练总结而非单纯重述</span></p></li><li><p><code>Discussion</code><span>: 关键结果+文献+个人观点</span></p><p><span>三个比较：预期目标+相关文献（创新点）+长远目标（实际贡献，理论意义，实践价值，推广可能）</span></p><p><code>imply/indicate/suggest</code></p><p><span>有逻辑，不要重复描述所有结果，有选择地对重要结果进行演绎推理得出有意义的推论</span></p></li><li><p><code>Conclusion</code><span>: Summary of </span><code>Discussion</code><span> </span></p><p><span>两个要点：突出亮点，指明方向</span></p><p><span>有时候研究目标/研究方法很亮眼时候需复述，总之需突出创新点</span></p></li></ul></li><li><p><span>讨论与结论的逻辑架构：</span></p><p><span>方法-结果 应当一一对应</span></p><p><span>补充文献结果和总结关键结果，整理为不同证据来提供多条理由（讨论部分） 段落间须有逻辑关联</span></p><p><span>递进：</span><code>In addition</code><span>,</span><code>furthermore</code></p><p><span>因果：</span><code>Therefore</code><span>,</span><code>Thus</code><span>,</span><code>As a result</code></p><p><span>转折：</span><code>However</code><span>,</span><code>On the other hand</code></p><p><span>反思使用方法+结果+讨论 回归到结论（结论部分）</span></p><p><span>先写重要结论，一个段落，一个结论，段落主题句为此结论的总结</span></p><p><span>逻辑：归纳逻辑（一一罗列），演绎逻辑（开头提出文献的某种理论和本实验结果，得出结果）</span></p><p><span>结果——头脑风暴——初步结论——完善逻辑</span></p></li><li><p><span>讨论和结论的四个方向及句型实例</span></p><p><span>主题拓展：</span></p><ul><li><p><span>解释（interpretations）：Why Results</span></p><ul><li><p><span>对研究目标的实现</span></p></li><li><p><span>对意外结果的解读</span></p></li><li><p><span>解释与提炼规律：</span></p><ul><li><span>The results of this study </span><code>indicate/show/suggest/confirm</code><span> that ...</span></li><li><span>Our findings </span><code>suggest</code><span> a possibility of ...</span></li><li><span>In this study, we </span><code>found/identified</code><span> that ...</span></li><li><span>This could </span><code>explain</code><span> why ...</span></li></ul></li><li><p><span>说明与其他研究的关系：</span></p><ul><li><span>Our data are </span><code>consistent</code><span> with ...</span></li><li><span>Our finding on ... </span><code>agree</code><span> with those reported by ... et al., who ...</span></li><li><span>Our data </span><code>differ</code><span> from ...</span></li><li><code>Unlike</code><span> ... et al., We observed that ...</span></li></ul></li></ul></li><li><p><span>延伸（Implications）：So what</span></p><ul><li><p><span>对长远目标的贡献</span></p></li><li><p><span>指出研究的创新性：</span></p><ul><li><span>Those results thus offer a </span><code>new</code><span> strategy to treat ...</span></li><li><span>The major </span><code>strength</code><span> of this study was ...</span></li><li><span>Our studies establish the .../Our approach is </span><code>special</code><span> as it not only ..., but also ...</span></li><li><span>In this study, we showed </span><code>for the first time</code><span> that ...</span></li></ul></li><li><p><span>指出研究发现的意义/影响：</span></p><ul><li><span>Our studies </span><code>serve</code><span> as a proof-of-concept that ...</span></li><li><span>Our findings </span><code>provide</code><span> additional support for .../</span><code>add to</code><span> the accumulating evidence that suggests .../</span><code>support</code><span> the promise that ...</span></li><li><span>Our finding may </span><code>be useful in</code><span> .../will allow us to take the nest step in ...</span></li><li><code>Adaptation</code><span> of this study to other ... could result in ...</span></li><li><span>学会掌握使用表述不同级别信心的词汇</span><code>likely/proabilable/possible</code><span>,</span><code>would/could/might</code></li><li><span>切记宽泛与浮夸</span></li></ul></li></ul></li></ul><p><span>侧向补强：</span></p><ul><li><p><span>局限（Limitations）：</span></p><ul><li><p><span>目标的局限</span></p></li><li><p><span>方法的局限</span></p></li><li><p><span>结果的局限</span></p><ul><li><code>However</code><span>, none of these approaches to date holds the ... 转折要慎用</span></li><li><span>In this study, ... was measured by ..., which may not have ...</span></li><li><span>It is possible, however, that other agents not tested could ...</span></li><li><span>Our studies have several limitations, First, ...</span></li><li><span>Our study subjects were ..., so it&#39;s not known whether our results are applicable to other groups ...</span></li></ul></li></ul></li><li><p><span>建议（Recommendations）：</span></p><ul><li><p><span>与长远目标的距离</span></p><ul><li><span>Our results imply that ..., but this must be testes </span><code>further</code><span> ...</span></li><li><span>Our findings suggested issues that should be explored </span><code>further</code><span> ...</span></li><li><span>These findings are important for ... and point to the need for ...</span></li><li><code>Further</code><span> study was warranted so that ...</span></li><li><code>Additional</code><span> studies are needed to confirm ...</span></li><li><span>These results suggest that ..., should be reinvestigated for ...</span></li><li><span>The </span><code>next step</code><span> is to ...</span></li><li><span>One important </span><code>further detection</code><span> of ... is ...</span></li><li><span>Larger studies with longer follow-up are needed to ...</span></li><li><span>We have begun investigating ...</span></li></ul></li></ul></li></ul><div class="md-diagram-panel"><svg id="mermaidChart963" width="100%" xmlns="http://www.w3.org/2000/svg" style="max-width: 827.484375px;" viewBox="0 0 827.484375 304"><style>
+:root { --mermaid-font-family: sans-serif}
+:root { --mermaid-alt-font-family: sans-serif}</style><style></style><g transform="translate(-12, -12)"><g class="output"><g class="clusters"></g><g class="edgePaths"><g class="edgePath" style="opacity: 1;"><path class="path" d="M119.63306818181817,157.5L229.53125,48L296,48" marker-end="url(#arrowhead12006)" style="fill:none"></path><defs><marker id="arrowhead12006" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M163.0625,169.17221467391303L229.53125,154L309.625,154" marker-end="url(#arrowhead12007)" style="fill:none"></path><defs><marker id="arrowhead12007" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M132.42013888888889,213.5L229.53125,280L315.546875,280" marker-end="url(#arrowhead12008)" style="fill:none"></path><defs><marker id="arrowhead12008" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M163.0625,201.82778532608697L229.53125,217L407.1640625,217L543.328125,217L568.328125,222.02943817982236" marker-end="url(#arrowhead12009)" style="fill:none"></path><defs><marker id="arrowhead12009" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g><g class="edgePath" style="opacity: 1;"><path class="path" d="M498.78125,280L543.328125,280L568.328125,274.97056182017764" marker-end="url(#arrowhead12010)" style="fill:none"></path><defs><marker id="arrowhead12010" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="strokeWidth" markerWidth="8" markerHeight="6" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" class="arrowheadPath" style="stroke-width: 1; stroke-dasharray: 1, 0;"></path></marker></defs></g></g><g class="edgeLabels"><g class="edgeLabel" transform="translate(229.53125,48)" style="opacity: 1;"><g transform="translate(-20.890625,-15.75)" class="label"><foreignObject width="41.7890625" height="31.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>why</span></div></foreignObject></g></g><g class="edgeLabel" transform="translate(229.53125,154)" style="opacity: 1;"><g transform="translate(-41.46875,-15.75)" class="label"><foreignObject width="82.9453125" height="31.5"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span>So what</span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g><g class="edgeLabel" transform="" style="opacity: 1;"><g transform="translate(0,0)" class="label"><foreignObject width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; white-space: nowrap;"><span></span></div></foreignObject></g></g></g><g class="nodes"><g class="node" id="O" transform="translate(91.53125,185.5)" style="opacity: 1;"><rect rx="0" ry="0" x="-71.53125" y="-28" width="143.0625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-61.53125,-18)"><foreignObject width="123.0703125" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">结果 Results</div></foreignObject></g></g></g><g class="node" id="A" transform="translate(407.1640625,48)" style="opacity: 1;"><rect rx="5" ry="5" x="-111.1640625" y="-28" width="222.328125" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-101.1640625,-18)"><foreignObject width="202.3359375" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">解释 interpretations</div></foreignObject></g></g></g><g class="node" id="B" transform="translate(407.1640625,154)" style="opacity: 1;"><rect rx="5" ry="5" x="-97.5390625" y="-28" width="195.078125" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-87.5390625,-18)"><foreignObject width="175.078125" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">延伸 Implications</div></foreignObject></g></g></g><g class="node" id="C" transform="translate(407.1640625,280)" style="opacity: 1;"><rect rx="5" ry="5" x="-91.6171875" y="-28" width="183.234375" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-81.6171875,-18)"><foreignObject width="163.2421875" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">局限 Limitations</div></foreignObject></g></g></g><g class="node" id="D" transform="translate(699.90625,248.5)" style="opacity: 1;"><rect rx="5" ry="5" x="-131.578125" y="-28" width="263.15625" height="56"></rect><g class="label" transform="translate(0,0)"><g transform="translate(-121.578125,-18)"><foreignObject width="243.1640625" height="36"><div xmlns="http://www.w3.org/1999/xhtml" style="display: inline-block; font-size: 0.9rem; line-height: 36px; white-space: nowrap;">建议 Recommendations</div></foreignObject></g></g></g></g></g></g></svg></div></li></ol><p>&nbsp;</p><h3><a name="chapter-2-handbook-of-writing-records" class="md-header-anchor"></a><span>Chapter 2 Handbook of Writing Records</span></h3><p><span>(updating)</span></p><p>&nbsp;</p></div>
+</body>
+</html>
