@@ -25,3 +25,5 @@ This blog is used to record learning history of Quantum calculation & new progra
 - [Inorganic Synthesis](./QC/inorganic_synthesis.html)
 - [Photonic Crystals](./QC/photonic_crystals.html)
 
+### Writing
+- [Paper Writing](./W/paper_writing.html)
