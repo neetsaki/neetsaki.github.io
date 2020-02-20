@@ -6,7 +6,7 @@ This blog is used to record learning history of Quantum calculation & new progra
 ### Quantum Chemistry
   - [Basic theory](./QC/Basic_theory.html)
   - [VASP tutorial](./QC/VASP_tutorial.html)
-  - Material Studio (MS) tutorial
+  - [Material Studio (MS) tutorial](./QC/MS_tutorial.html)
   - Quantum Expresso (QE) tutorial
   - PWmat tutorial
   - Graphic User Interface (GUI)
@@ -18,7 +18,8 @@ This blog is used to record learning history of Quantum calculation & new progra
   - [GUI collection]
 
 ### Machine Learning assisted Material science
-
+  - [Ai-Studio DeepML Course](./ML/Ai-Studio.html)
+  
 ### Programming Language
 
 ### Experiment Science
