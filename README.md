@@ -7,6 +7,7 @@ This blog is used to record learning history of Quantum calculation & new progra
   - [Basic theory](./QC/Basic_theory.html)
   - [VASP tutorial](./QC/VASP_tutorial.html)
   - [Material Studio (MS) tutorial](./QC/MS_tutorial.html)
+  - Cp2k tutorial
   - Quantum Expresso (QE) tutorial
   - PWmat tutorial
   - Graphic User Interface (GUI)
