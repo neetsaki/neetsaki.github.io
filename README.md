@@ -29,3 +29,4 @@ This blog is used to record learning history of Quantum calculation & new progra
 
 ### Writing
 - [Paper Writing](./W/paper_writing.html)
+- [A Glossary of Literary Terms](./W/A_glossary_of_literary_term.html)
