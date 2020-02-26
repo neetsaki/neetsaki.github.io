@@ -18,6 +18,9 @@ This blog is used to record learning history of Quantum calculation & new progra
   - [GROMACs Tutorial]
   - [GUI collection]
 
+### Macroscopic Methods
+  - [Finite Element Modelling (FEA) Theory]
+  - [COMSOL Tutorial]
 ### Machine Learning assisted Material science
   - [Ai-Studio DeepML Course](./ML/Ai-Studio.html)
   
