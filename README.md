@@ -21,6 +21,10 @@ This blog is used to record learning history of Quantum calculation & new progra
 ### Macroscopic Methods
   - [Finite Element Modelling (FEA) Theory]
   - [COMSOL Tutorial]
+
+### Cheminformatics
+  - [Rdkit Tutorial]
+  - [ML asssisted Drug&Mat. search]
   
 ### Machine Learning assisted Material science
   - [Ai-Studio DeepML Course](./ML/Ai-Studio.html)
