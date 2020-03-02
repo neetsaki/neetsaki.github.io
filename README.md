@@ -25,7 +25,7 @@ This blog is used to record learning history of Quantum calculation & new progra
 ### Cheminformatics
   - [Rdkit & OpenBabel Tutorial](./CI/Rdkit_Tutorial.html)
   - [DeepChem Tutorial]
-  - [USPEX Tutorial]
+  - [USPEX Tutorial](./CI/USPEX_Tutorials.html)
   - [ML asssisted Drug&Mat. search]
   
 ### Machine Learning assisted Material science
