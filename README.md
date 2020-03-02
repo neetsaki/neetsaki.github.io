@@ -23,13 +23,15 @@ This blog is used to record learning history of Quantum calculation & new progra
   - [COMSOL Tutorial]
 
 ### Cheminformatics
-  - [Rdkit Tutorial]
+  - [Rdkit & OpenBabel Tutorial]
+  - [DeepChem Tutorial]
   - [ML asssisted Drug&Mat. search]
   
 ### Machine Learning assisted Material science
   - [Ai-Studio DeepML Course](./ML/Ai-Studio.html)
   
 ### Programming Language
+  - [Python Programming](./PL/python_programming.html)
 
 ### Experiment Science
 - [Inorganic Synthesis](./QC/inorganic_synthesis.html)
