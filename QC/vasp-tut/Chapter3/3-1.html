@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Chapter 2  Vasp Input & Output File · GitBook</title>
+        <title>频率计算 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-1.html" />
+    <link rel="next" href="3-2.html" />
     
     
-    <link rel="prev" href="../Chapter1/1-2.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
             
-                <a href="./">
+                <a href="../Chapter2/">
             
                     
                     Chapter 2  Vasp Input & Output File
@@ -161,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
             
-                <a href="2-1.html">
+                <a href="../Chapter2/2-1.html">
             
                     
                     INCAR
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
             
-                <a href="2-2.html">
+                <a href="../Chapter2/2-2.html">
             
                     
                     other
@@ -192,9 +192,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../Chapter3/">
+                <a href="./">
             
                     
                     Chapter 3 Convergence & Optimization
@@ -206,9 +206,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Chapter3/3-1.html">
+        <li class="chapter active" data-level="1.4.1" data-path="3-1.html">
             
-                <a href="../Chapter3/3-1.html">
+                <a href="3-1.html">
             
                     
                     频率计算
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Chapter3/3-2.html">
+        <li class="chapter " data-level="1.4.2" data-path="3-2.html">
             
-                <a href="../Chapter3/3-2.html">
+                <a href="3-2.html">
             
                     
                     应力计算
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Chapter3/3-3.html">
+        <li class="chapter " data-level="1.4.3" data-path="3-3.html">
             
-                <a href="../Chapter3/3-3.html">
+                <a href="3-3.html">
             
                     
                     常见问题
@@ -984,7 +984,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Chapter 2  Vasp Input & Output File</a>
+        <a href=".." >频率计算</a>
     </h1>
 </div>
 
@@ -999,14 +999,175 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="chapter-2--vasp-input--output-file">Chapter 2  Vasp Input &amp; Output File</h1>
-<h4 id="overview">Overview:</h4>
+                                <h1 id="&#x9891;&#x7387;&#x8BA1;&#x7B97;">&#x9891;&#x7387;&#x8BA1;&#x7B97;</h1>
+<blockquote>
+<p>&#x865A;&#x9891;&#x4E5F;&#x4F5C;&#x4E3A;&#x6536;&#x655B;&#x7684;&#x4E00;&#x4E2A;&#x5224;&#x636E;</p>
+</blockquote>
 <ul>
-<li><p>Input file: INCAR POSCAR KPOINTS POTCAR</p>
+<li><p>&#x5E94;&#x7528;&#x573A;&#x666F;&#xFF1A;</p>
+<ul>
+<li>&#x786E;&#x5B9A;&#x7ED3;&#x6784;&#x662F;&#x5426;&#x7A33;&#x5B9A;;</li>
+<li>&#x770B;&#x632F;&#x52A8;&#x65B9;&#x5F0F;&#x548C;&#x5927;&#x5C0F;,&#x7528;&#x6765;&#x548C;&#x5B9E;&#x9A8C;&#x5BF9;&#x6BD4;,&#x68CB;&#x535A;&#x58EB;&#x6700;&#x65B0;&#x7684;&#x6587;&#x7AE0;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x597D;&#x7684;&#x4F8B;&#x5B50;;</li>
+<li>&#x53CD;&#x5E94;&#x70ED;,&#x53CD;&#x5E94;&#x80FD;&#x5792;, &#x5438;&#x9644;&#x80FD;&#x7B49;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#xFF08;ZPE&#xFF09;&#x77EB;&#x6B63;;</li>
+<li>&#x786E;&#x8BA4;&#x8FC7;&#x6E21;&#x6001;(&#x6709;&#x4E00;&#x4E2A;&#x632F;&#x52A8;&#x7684;&#x865A;&#x9891;)</li>
+<li>&#x70ED;&#x529B;&#x5B66;&#x4E2D;&#x8BA1;&#x7B97;entropy,&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5316;&#x5B66;&#x52BF;,&#x5FAE;&#x89C2;&#x52A8;&#x529B;&#x5B66;&#x4E2D;&#x7684;&#x6307;&#x524D;&#x56E0;&#x5B50;&#x548C;&#x53CD;&#x5E94;&#x80FD;&#x5792;  </li>
+</ul>
 </li>
-<li><p>output file : OUTCAR CHGCAR WAVECAR</p>
+<li><p>&#x8BA1;&#x7B97;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li><p>&#x4F9D;&#x7167;&#x524D;&#x9762;&#x6240;&#x8FF0;&#x8FDB;&#x884C;&#x4F18;&#x5316;</p>
 </li>
-<li><p>complex computation: metadynamics (ICONST, PENALTYPOT)&#xFF1B;dimer&#x5BFB;&#x627E;&#x8FC7;&#x6E21;&#x6001;&#xFF08;MODECAR&#xFF09;&#xFF1B;&#x5404;&#x5411;&#x5F02;&#x6027;&#x4F18;&#x5316;&#x6676;&#x80DE;&#xFF08;OPTCELL&#xFF09;</p>
+<li><p>&#x5C06;CONTCAR&#x590D;&#x5236;&#x4E3A;POSCAR</p>
+</li>
+<li><p>&#x4FEE;&#x6539;INCAR&#xFF0C;&#x4E3B;&#x8981;&#x4FEE;&#x6539;&#x53C2;&#x6570;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>IBRION=5 #freq calc
+POTIM=0.02 #&#x4E00;&#x4E2A;&#x66F4;&#x5C0F;&#x7684;&#x503C;&#xFF0C;default:0.015
+NSW=1  # any value which &gt;1
+NFREE=2 # do not set NFREE=1&#xFF0C;&#x6DFB;&#x52A0;&#x8FD9;&#x4E00;&#x4E2A;&#x53C2;&#x6570;,&#x8868;&#x660E;&#x539F;&#x5B50;&#x5728;&#x67D0;&#x4E00;&#x65B9;&#x5411;&#x4E0A;&#x6B63;&#x53CD;&#x4E24;&#x4E2A;&#x65B9;&#x5411;&#x79FB;&#x52A8;
+# NCORE=4 &#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x9891;&#x7387;&#x65F6;VASP&#x4F1A;&#x7F62;&#x5DE5;
+EDIFFG=1E-6 #&#x4E25;&#x683C;&#x4E00;&#x4E9B;&#xFF0C;&#x9700;&#x8981;&#x4FDD;&#x8BC1;&#x51C6;&#x786E;
+</code></pre></li>
+<li><p>&#x67E5;&#x770B;&#x9891;&#x7387;&#x5206;&#x6790;&#x7684;OUTCAR,OSZICAR&#x7B49;&#x8F93;&#x51FA;&#x6587;&#x4EF6;  </p>
+</li>
+<li><p>&#x5F53;&#x4F60;&#x8BBE;&#x7F6E;&#x4E86;NFREE=2&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x9891;&#x7387;&#x8BA1;&#x7B97;&#x9700;&#x8981;1+N*6&#x6B65;&#x3002;N&#x4E3A;&#x4F53;&#x7CFB;&#x4E2D;&#x7684;&#x632F;&#x52A8;&#x7684;&#x539F;&#x5B50;&#x6570;  </p>
+</li>
+<li><p>vi command&#xFF1A;: set nu &#x663E;&#x793A;&#x6587;&#x672C;&#x7684;&#x884C;&#x6570;&#xFF0C;&#x53D6;&#x6D88;&#x884C;&#x6570;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; :set nonu  </p>
+</li>
+</ul>
+</li>
+<li><p>&#x56FA;&#x5B9A;&#x50AC;&#x5316;&#x5242;&#x90E8;&#x5206;&#x8BA1;&#x7B97;&#x632F;&#x52A8;&#x9891;&#x7387;&#xFF1A;</p>
+<ul>
+<li><p>&#x4E09;&#x4E2A;&#x65B9;&#x5411;&#x90FD;&#x5141;&#x8BB8;&#xFF1A;T T T
+&#x4E09;&#x4E2A;&#x65B9;&#x5411;&#x4E0A;&#x90FD;&#x4E0D;&#x5141;&#x8BB8;&#x4E3A; F F F
+x&#x79FB;&#x52A8;&#xFF0C;y&#x548C;z&#x65B9;&#x5411;&#x4E0A;&#x56FA;&#x5B9A;&#x4E3A;&#xFF1A; T F F
+x&#x548C;y&#x65B9;&#x5411;&#x4E0A;&#x56FA;&#x5B9A;&#xFF0C;z&#x65B9;&#x5411;&#x632F;&#x52A8;&#xFF1A; F F T  </p>
+</li>
+<li><p>&#x901A;&#x8FC7;Vim&#x7684;&#x5B9E;&#x73B0; &#xFF1A;</p>
+<p><img src="../vasp-tut-fig/image-20191204170353668.png" alt="image-20191204170353668" style="zoom:67%;"></p>
+<p>&#x56FE;&#x4E2D;1&#xFF1A;&#x63D2;&#x5165;&#x4E00;&#x884C;&#xFF0C;&#x544A;&#x8BC9;VASP&#x6211;&#x4EEC;&#x8981;&#x9009;&#x62E9;&#x6027;&#x7684;&#x56FA;&#x5B9A;&#x67D0;&#x4E9B;&#x539F;&#x5B50;&#x6216;&#x8005;&#x5728;&#x67D0;&#x4E9B;&#x65B9;&#x5411;&#x4E0A;&#xFF1B;
+&#x56FE;&#x4E2D;2&#xFF1A; 10,18s &#x4E2D; s &#x4EE3;&#x8868;&#x66FF;&#x6362;&#xFF08;substitute&#xFF09;&#x7684;&#x610F;&#x601D;&#xFF0C;&#x8FD9;&#x91CC;&#x8868;&#x793A;&#x6211;&#x4EEC;&#x9009;&#x4E2D;&#x4E86;&#x7B2C;10&#x5230;18&#x884C;&#xFF0C;10&#x548C;18&#x4E4B;&#x95F4;&#x6709;&#x4E2A;&#x9017;&#x53F7;&#x8868;&#x793A;&#x8FDE;&#x7EED;&#xFF1B;10,18s&#x540E;&#x9762;&#x7528;&#x4E00;&#x4E2A; / &#x5206;&#x5F00;&#xFF0C;&#x7D27;&#x8DDF;&#x7740;&#x4F60;&#x6211;&#x4EEC;&#x8981;&#x66FF;
+&#x6362;&#x7684;&#x5185;&#x5BB9;&#xFF1B;$&#x5728;&#x8FD9;&#x91CC;&#x662F;&#x672B;&#x5C3E;&#x7684;&#x610F;&#x601D;&#xFF0C;</p>
+<p>$/T T T&#x6211;&#x4EEC;&#x8981;&#x628A;&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x6700;&#x540E;&#x66FF;&#x6362;&#x6210; T T T &#x540E;&#x9762;&#x518D;&#x7528;&#x4E00;&#x4E2A;/&#x5206;&#x5F00;&#xFF0C;&#x52A0;&#x4E0A;g &#x8868;&#x793A; global &#x5168;&#x90E8;&#x66FF;&#x6362;&#x7684;&#x610F;&#x601D;&#x3002;  </p>
+</li>
+<li><p>p4vasp&#x4EA6;&#x53EF;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x632F;&#x52A8;&#x9891;&#x7387;&#x53EF;&#x89C6;&#x5316;&#xFF1A;</p>
+<ul>
+<li><p>Linux&#x5B89;&#x88C5;jmol</p>
+<pre><code class="lang-bash">jmol.sh OUTCAR
+</code></pre>
+</li>
+<li><p>&#x5DE5;&#x5177;-&#x539F;&#x5B50;&#x5E93;&#x9009;&#x62E9;&#x5668;</p>
+</li>
+<li><p>&#x4E5F;&#x53EF;&#x4EE5;&#x53F3;&#x952E;-&#x6A21;&#x578B;&#x4E2D;&#x9009;&#x4E2D;</p>
+</li>
+<li><p>&#x539F;&#x5B50;&#x5E93;&#x4E2D;&#x9009;&#x62E9;&#x6700;&#x4E0B;&#x65B9;&#xFF1A;&#x632F;&#x52A8;&#xFF0C;&#x5F00;&#x542F;&#x632F;&#x52A8;</p>
+</li>
+</ul>
+</li>
+<li><p>OUTCAR&#x4E2D;&#x7684;&#x539F;&#x4FE1;&#x606F;&#xFF1A;</p>
+<ul>
+<li><p>1&#xFF09;1 f = &#x4EE3;&#x8868;&#x7B2C;&#x4E00;&#x4E2A;&#x632F;&#x52A8;&#x6A21;&#x5F0F;&#xFF0C;&#x7EC6;&#x5FC3;&#x7684;&#x4F60;&#x4ED4;&#x7EC6;&#x89C2;&#x5BDF;&#xFF0C;&#x4F1A;&#x53D1;&#x73B0;&#x6BCF;&#x4E00;&#x884C;&#x6709;&#x56DB;&#x4E2A;&#x5355;&#x4F4D;&#x7684;&#x6570;&#x503C;&#xFF1A;THz, 2PiTHz, cm-1,&#x548C;meV&#xFF0C;&#x8FD9;&#x56DB;&#x4E2A;&#x662F;&#x5B8C;&#x5168;&#x7B49;&#x540C;&#x7684;&#xFF1B;
+2&#xFF09;&#x4E0B;&#x9762;&#x4E00;&#x884C;&#x4E3A;&#x5750;&#x6807;&#xFF38;Y Z&#x548C;&#x6BCF;&#x4E2A;&#x539F;&#x5B50;&#x5728;x y z&#x65B9;&#x5411;&#x4E0A;&#x7684;&#x632F;&#x52A8;&#x5927;&#x5C0F;&#xFF1B;
+3&#xFF09;X Y Z&#x4E0B;&#x9762;&#x7684;&#x6570;&#x5B57;&#x4E3A;&#x7ED3;&#x6784;&#x7684;&#x5750;&#x6807;&#x4FE1;&#x606F;&#xFF08;Cartesian&#x5750;&#x6807;&#x7CFB;&#xFF09;&#xFF0C;dx dy dz &#x4E3A;&#x632F;&#x52A8;&#x7684;&#x5177;&#x4F53;&#x6570;&#x503C;&#xFF1B;
+4)&#x540E;&#x9762;&#x7684;&#x632F;&#x52A8;&#x6A21;&#x5F0F;&#x7684;&#x9891;&#x7387;&#x548C;&#x7B2C;&#x4E00;&#x4E2A;&#x7684;&#x683C;&#x5F0F;&#x4E00;&#x6837;&#x3002;  </p>
+</li>
+<li><p>&#x9891;&#x7387;&#x5355;&#x4F4D;&#x7684;&#x6362;&#x7B97;  &#xFF1A;</p>
+<p><img src="../vasp-tut-fig/image-20191204171104993.png" alt="image-20191204171104993" style="zoom:50%;"></p>
+</li>
+<li><p>OUTCAR&#x9891;&#x7387;&#x4FE1;&#x606F;&#x7684;&#x63D0;&#x53D6;  &#xFF1A;</p>
+<ul>
+<li><pre><code class="lang-bash">grep THz OUTCAR
+grep 2PiTHz OUTCAR
+grep cm-1 OUTCAR
+grep meV OUTCAR
+</code></pre>
+</li>
+<li><p>&#x7EFC;&#x5408;&#x8FD9;&#x4E9B;&#x56E0;&#x7D20;&#xFF0C;&#x5BF9;&#x4E8E;&#x5206;&#x5B50;&#x7684;&#x632F;&#x52A8;&#x9891;&#x7387;&#x6765;&#x8BF4;&#xFF08;&#x6CE8;&#x610F;&#xFF1A;&#x58F0;&#x5B50;&#x8C31;&#x4E0D;&#x9002;&#x7528;&#xFF09;&#x4E00;&#x822C;&#x4F4E;&#x4E8E;100cm-1&#x7684;&#x9891;&#x7387;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x3002;&#x4E25;&#x683C;&#x70B9;&#x53EF;&#x4EE5;&#x964D;&#x5230; 50 cm &#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF1A;&#x5982;&#x679C;&#x4F60;&#x5728;&#x8BA1;&#x7B97;&#x4E2D;&#x53D1;&#x73B0;&#x6709;&#x4E2A;50cm &#x5DE6;&#x53F3;&#x7684;&#x865A;&#x9891;&#xFF0C;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x4E0D;&#x8003;&#x8651;  </p>
+</li>
+</ul>
+</li>
+<li><p>&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63; :</p>
+<ul>
+<li><p>&#x8F93;&#x51FA;&#x5171;&#x6709;11&#x5217;&#xFF08;&#x5217;&#x4E4B;&#x95F4;&#x7528;&#x7A7A;&#x683C;&#x5206;&#x5F00;&#xFF09;&#xFF1A;&#x6211;&#x4EEC;&#x8981;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#x5728;&#x7B2C;10&#x5217;&#xFF0C;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF1A;</p>
+<p><code>grep &apos;f =&apos; OUTCAR | awk &apos;{print $10}</code>  </p>
+</li>
+<li><p>&#x5982;&#x679C;&#x60F3;&#x540C;&#x65F6;&#x8F93;&#x51FA;&#x7B2C;1&#x548C;10&#x4E24;&#x5217;&#xFF1A; </p>
+<pre><code class="lang-bash">grep <span class="hljs-string">&apos;f =&apos;</span> OUTCAR | awk<span class="hljs-string">&apos;{print $1 &quot; &quot;$10}&apos;</span>
+</code></pre>
+<p>1 &#x548C; $10 &#x4E4B;&#x95F4;&#x6709;2&#x4E2A; &#x53CC;&#x5F15;&#x53F7;&#xFF1A;&quot; &quot;&#xFF0C;&#x4E24;&#x4E2A;&#x53CC;&#x5F15;&#x53F7;&#x91CC;&#x9762;&#x6709;&#x4E00;&#x4E2A;&#x7A7A;&#x683C;&#x7528;&#x6765;&#x5206;&#x5F00;&#xFF09;&#xFF0C;&#x5426;&#x5219;&#x4E24;&#x5217;&#x4F1A;&#x8FDE;&#x5728;&#x4E00;&#x8D77;&#x3002; </p>
+</li>
+<li><p><strong>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x63D0;&#x53D6;&#x7684;&#x80FD;&#x91CF;&#x4E3A;&#xFF1A;hv &#xFF01;&#xFF01;&#xFF01;&#x800C;&#x96F6;&#x70B9;&#x80FD;&#x4E3A;1/2 hv&#xFF01;&#xFF01;&#xFF01;</strong>  </p>
+</li>
+<li><p>&#x5C06;&#x6240;&#x6709;&#x632F;&#x52A8;&#x7684;&#x80FD;&#x91CF;&#x6C42;&#x548C;&#xFF1A;  </p>
+<p><code>grep &apos;f =&apos; OUTCAR | awk &apos;{print $10}&apos; | paste -sd+ |bc</code></p>
+<p>&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;&#x9664;&#x4EE5;2&#xFF0C;&#x6362;&#x7B97;&#x4E3A;eV&#x9664;&#x4EE5;1000</p>
+</li>
+<li><p>A&#xFF09;&#x9996;&#x5148;&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x5B8C;&#x6BD5;&#x540E;&#x6211;&#x4EEC;&#x4F1A;&#x5F97;&#x5230;&#x5206;&#x5B50;&#x7684;&#x80FD;&#x91CF;&#xFF1A;E0
+B&#xFF09;&#x9891;&#x7387;&#x8BA1;&#x7B97;&#x540E;&#x6211;&#x4EEC;&#x4F1A;&#x5F97;&#x5230;&#x5206;&#x5B50;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#xFF1A;ZPE
+C&#xFF09;&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63;&#x4E4B;&#x540E;&#x7684;&#x4E59;&#x9187;&#x5206;&#x5B50;&#x80FD;&#x91CF;&#x4E3A;&#xFF1A; E_ZPE = E0 + ZPE
+D&#xFF09;A&#x548C;B&#x5F97;&#x51FA;&#x7684;&#x7ED3;&#x679C;&#x76F4;&#x63A5;&#x76F8;&#x52A0;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x8981;&#x60F3;&#x592A;&#x591A;&#x3002;  </p>
+</li>
+</ul>
+</li>
+<li><p>&#x600E;&#x4E48;&#x8BA1;&#x7B97;&#x8FC7;&#x6E21;&#x6001;&#x548C;&#x53CD;&#x5E94;&#x70ED;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63;  </p>
+<ul>
+<li><p>&#x5BF9;&#x4E00;&#x4E2A;&#x53CD;&#x5E94;&#xFF1A;IS --&gt; TS --&gt; FS
+IS: Initial State &#x53CD;&#x5E94;&#x7269;
+TS: Transition State &#x8FC7;&#x6E21;&#x6001;
+FS: Final State &#x4EA7;&#x7269;  </p>
+</li>
+<li><p>1&#xFF09;&#x4F18;&#x5316;&#x53CD;&#x5E94;&#x7269;IS&#x548C;&#x4EA7;&#x7269;FS&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x83B7;&#x5F97;&#x80FD;&#x91CF;&#xFF1A;E(IS),E(FS);
+2&#xFF09;&#x5BF9;&#x53CD;&#x5E94;&#x7269;&#x548C;&#x4EA7;&#x7269;&#x8FDB;&#x884C;&#x9891;&#x7387;&#x8BA1;&#x7B97;&#xFF0C;&#x83B7;&#x5F97;&#x5404;&#x81EA;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#xFF1A;ZPE(IS), ZPE(FS)&#x3002;
+3&#xFF09;&#x641C;&#x7D22;&#x8FC7;&#x6E21;&#x6001;&#xFF0C;&#x83B7;&#x5F97;&#x7ED3;&#x6784;&#x548C;&#x80FD;&#x91CF;E(TS);
+4&#xFF09;&#x8FC7;&#x6E21;&#x6001;&#x9891;&#x7387;&#x5206;&#x6790;&#xFF0C;&#x83B7;&#x5F97;&#x96F6;&#x70B9;&#x80FD;ZPE(TS)  </p>
+</li>
+<li><p>&#x4E0D;&#x8003;&#x8651;&#x96F6;&#x70B9;&#x80FD;&#x7684;&#x53CD;&#x5E94;&#x80FD;&#x5792;(E )&#x548C;&#x53CD;&#x5E94;&#x70ED;(&#x394;E)&#xFF1A;
+E = E(TS) &#x2013; E(IS)
+&#x394;E =E(FS) &#x2013; E(IS)  </p>
+</li>
+<li><p>&#x8003;&#x8651;&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63;&#xFF1A;
+$E = E<em>{ZPE}(TS) &#x2013; E</em>{ZPE}(IS) = E(TS) +ZPE(TS) &#x2013; E(IS) &#x2013; ZPE(IS) = E + ZPE(TS) &#x2013; ZPE(IS)$&#x540C;&#x7406;:
+&#x394;E =&#x394;E + ZPE(FS) &#x2013;ZPE(IS)  </p>
+</li>
+<li><p>&#x4E24;&#x4E2A;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#xFF1A;
+a. &#x5148;&#x83B7;&#x53D6;&#x672A;&#x6821;&#x6B63;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x96F6;&#x70B9;&#x80FD;&#x5404;&#x81EA;&#x76F8;&#x51CF;&#xFF1B;
+b. &#x5148;&#x5C06;&#x5404;&#x4E2A;&#x7269;&#x79CD;&#x8FDB;&#x884C;&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8BA1;&#x7B97;&#x53CD;&#x5E94;&#x80FD;&#x5792;&#x6216;&#x8005;&#x53CD;&#x5E94;&#x70ED;&#x6548;&#x679C;&#x662F;&#x4E00;&#x6837;&#x7684;  </p>
+</li>
+<li><p>&#x9891;&#x7387;&#x8BA1;&#x7B97;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x662F;&#x4E0D;&#x662F;&#x4F53;&#x7CFB;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x539F;&#x5B50;&#x90FD;&#x653E;&#x5F00; &#xFF1A;</p>
+<p><strong>&#x4F8B;&#x5B50;A:</strong>
+&#x4E59;&#x9187;&#x5728;Cu(111)&#x8868;&#x9762;&#x4E0A;&#x7684;&#x5438;&#x9644;&#xFF0C;&#x8BA1;&#x7B97;&#x5438;&#x9644;&#x70ED;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63;
+$\ce{CH3CH2OH + Cu(111) -&gt; Cu(111)-CH2CH3OH}$
+&#x6B64;&#x65F6;&#xFF0C;<strong>Cu(111)&#x8868;&#x9762;&#x6211;&#x4EEC;&#x5728;&#x8BA1;&#x7B97;&#x9891;&#x7387;&#x7684;&#x65F6;&#x5019;&#x662F;&#x8981;&#x56FA;&#x5B9A;&#x4F4F;&#x7684;</strong>&#xFF01;&#x53EA;&#x632F;&#x52A8;&#x4E59;&#x9187;&#x5206;&#x5B50;&#x5373;&#x53EF;&#x3002;
+<strong>&#x4F8B;&#x5B50;B</strong>&#xFF1A;
+&#x8BA1;&#x7B97;CO&#x5728;Cu(111)&#x8868;&#x9762;&#x4E0A;&#x7684;&#x5438;&#x9644;&#xFF1A;
+&#x540C;A&#xFF0C;&#x56FA;&#x5B9A;Cu(111) &#x8868;&#x9762;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x53EA;&#x5173;&#x5FC3;CO&#x5728;&#x5782;&#x76F4;&#x8868;&#x9762;&#x4E0A;&#x7684;&#x632F;&#x52A8;&#xFF0C;&#x90A3;&#x4E48;CO&#x7684;xy&#x65B9;&#x5411;&#x4FBF;&#x53EF;&#x4EE5;&#x56FA;&#x5B9A;&#x4F4F;&#xFF0C;&#x5728;&#x5750;&#x6807;&#x540E;&#x9762;&#x4E3A;&#xFF1A;F F T
+<strong>&#x4F8B;&#x5B50;C</strong>&#xFF1A;
+&#x82EF;&#x915A;&#x5728;Cu(111)&#x8868;&#x9762;&#x4E0A;O&#x2014;H&#x952E;&#x65AD;&#x88C2;&#x6D3B;&#x5316;&#x80FD;&#x7684;&#x96F6;&#x70B9;&#x80FD;&#x6821;&#x6B63;&#xFF1A;
+&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x62FF;&#x82EF;&#x915A;&#x4F5C;&#x4E3A;&#x4F8B;&#x5B50;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#xFF0C;&#x8BA1;&#x7B97;&#x7684;&#x5BF9;&#x8C61;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x5168;&#x90E8;&#x9891;&#x7387;&#x4F18;&#x5316;&#x975E;&#x5E38;&#x8017;&#x65F6;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x5F97;&#x9009;&#x62E9;&#x6027;&#x5730;&#x56FA;&#x5B9A;&#x4F4F;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x53EA;&#x5173;&#x5FC3;&#x5173;&#x952E;&#x7684;&#x5C40;&#x57DF;&#x90E8;&#x5206;&#x3002;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x8BA8;&#x8BBA;&#x96F6;&#x70B9;&#x80FD;&#x5BF9;O&#x2014;H&#x952E;&#x65AD;&#x88C2;&#x6D3B;&#x5316;&#x80FD;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x82EF;&#x73AF;&#x7684;&#x90E8;&#x5206;&#x56FA;&#x5B9A;&#x4F4F;&#xFF0C;&#x53EA;&#x653E;&#x5F00;O&#x548C;H&#x539F;&#x5B50;&#x8FDB;&#x884C;&#x632F;&#x52A8;&#x3002;  </p>
+<p><strong>&#x8FD8;&#x6709;&#x4E00;&#x70B9;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF1A;IS&#xFF0C;TS&#x548C;FS&#x4E2D;&#xFF0C;&#x6240;&#x56FA;&#x5B9A;&#x548C;&#x653E;&#x5F00;&#x7684;&#x539F;&#x5B50;&#x5FC5;&#x987B;&#x4E00;&#x81F4;&#xFF01;&#xFF01;&#xFF01;</strong>  </p>
+</li>
+<li><p>&#x83B7;&#x53D6;&#x865A;&#x9891;&#x547D;&#x4EE4;&#xFF1A;<code>grep &apos;f/i&apos; */OUTCAR | awk &apos;{print $1 &quot;\t &quot; $2 &quot;\t&quot; $8 &quot;\t &quot; $9 &quot;\t&quot; $10 &quot;\t&quot; $11}&apos;</code>
+&#x83B7;&#x53D6;&#x65F6;&#x95F4;&#x547D;&#x4EE4;&#xFF1A; <code>grep Elapsed */OUTCAR | sort -n</code>
+&#x83B7;&#x53D6;&#x96F6;&#x70B9;&#x80FD;&#xFF1A; <code>for i in * ; do echo $i $(cd $i ; fsum ; cd $OLDPWD);done | sort &#x2013;n</code> </p>
+</li>
+<li><p>POTIM&#x592A;&#x5C0F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5BF9;&#x96F6;&#x70B9;&#x80FD;&#x5F71;&#x54CD;&#x5F88;&#x5927;  </p>
+</li>
+<li><p>POTIM &#x592A;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x641E;&#x51FA;&#x6765;&#x8D85;&#x5927;&#x53F7;&#x7684;&#x865A;&#x9891;  </p>
+</li>
+<li><p>5.1 IBRION = 5 &#xFF08;&#x544A;&#x8BC9;VASP&#x6211;&#x4EEC;&#x8981;&#x7B97;&#x9891;&#x7387;&#xFF09;
+5.2 POTIM = 0.015
+5.3 NFREE = 2
+5.4 ENCUT&#x548C;&#x539F;&#x6765;&#x4E00;&#x6837;
+5.5 PREC = Normal
+5.6 EDIFF = 1E-5 &#x6216;&#x8005; 1E-6
+5.7 KPOINTS Gamma&#x70B9;&#x5373;&#x53EF;&#x3002;  </p>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 
@@ -1036,12 +1197,12 @@
 
             
                 
-                <a href="../Chapter1/1-2.html" class="navigation navigation-prev " aria-label="Previous page: VASP+VTST Installation">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Chapter 3 Convergence & Optimization">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-1.html" class="navigation navigation-next " aria-label="Next page: INCAR">
+                <a href="3-2.html" class="navigation navigation-next " aria-label="Next page: 应力计算">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1052,7 +1213,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 2  Vasp Input & Output File","level":"1.3","depth":1,"next":{"title":"INCAR","level":"1.3.1","depth":2,"path":"Chapter2/2-1.md","ref":"Chapter2/2-1.md","articles":[]},"previous":{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"path":"Chapter1/1-2.md","ref":"Chapter1/1-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/README.md","mtime":"2020-03-27T05:12:36.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"频率计算","level":"1.4.1","depth":2,"next":{"title":"应力计算","level":"1.4.2","depth":2,"path":"Chapter3/3-2.md","ref":"Chapter3/3-2.md","articles":[]},"previous":{"title":"Chapter 3 Convergence & Optimization","level":"1.4","depth":1,"path":"Chapter3/README.md","ref":"Chapter3/README.md","articles":[{"title":"频率计算","level":"1.4.1","depth":2,"path":"Chapter3/3-1.md","ref":"Chapter3/3-1.md","articles":[]},{"title":"应力计算","level":"1.4.2","depth":2,"path":"Chapter3/3-2.md","ref":"Chapter3/3-2.md","articles":[]},{"title":"常见问题","level":"1.4.3","depth":2,"path":"Chapter3/3-3.md","ref":"Chapter3/3-3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/3-1.md","mtime":"2020-03-27T06:29:47.203Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

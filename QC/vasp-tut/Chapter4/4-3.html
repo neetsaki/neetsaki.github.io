@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Chapter 2  Vasp Input & Output File · GitBook</title>
+        <title>表面吸附 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-1.html" />
+    <link rel="next" href="../Chapter5/" />
     
     
-    <link rel="prev" href="../Chapter1/1-2.html" />
+    <link rel="prev" href="4-2.html" />
     
 
     </head>
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
             
-                <a href="./">
+                <a href="../Chapter2/">
             
                     
                     Chapter 2  Vasp Input & Output File
@@ -161,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
             
-                <a href="2-1.html">
+                <a href="../Chapter2/2-1.html">
             
                     
                     INCAR
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
             
-                <a href="2-2.html">
+                <a href="../Chapter2/2-2.html">
             
                     
                     other
@@ -250,9 +250,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../Chapter4/">
+                <a href="./">
             
                     
                     Chapter 4 DOS & Band Structure
@@ -264,9 +264,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/4-1.html">
+        <li class="chapter " data-level="1.5.1" data-path="4-1.html">
             
-                <a href="../Chapter4/4-1.html">
+                <a href="4-1.html">
             
                     
                     DOS计算
@@ -277,9 +277,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/4-2.html">
+        <li class="chapter " data-level="1.5.2" data-path="4-2.html">
             
-                <a href="../Chapter4/4-2.html">
+                <a href="4-2.html">
             
                     
                     Band Structure计算
@@ -290,9 +290,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../Chapter4/4-3.html">
+        <li class="chapter active" data-level="1.5.3" data-path="4-3.html">
             
-                <a href="../Chapter4/4-3.html">
+                <a href="4-3.html">
             
                     
                     表面吸附
@@ -984,7 +984,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Chapter 2  Vasp Input & Output File</a>
+        <a href=".." >表面吸附</a>
     </h1>
 </div>
 
@@ -999,15 +999,89 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="chapter-2--vasp-input--output-file">Chapter 2  Vasp Input &amp; Output File</h1>
-<h4 id="overview">Overview:</h4>
+                                <h1 id="&#x8868;&#x9762;&#x5438;&#x9644;">&#x8868;&#x9762;&#x5438;&#x9644;</h1>
+<h4 id="&#x6570;&#x636E;&#x5E93;&#xFF1A;">&#x6570;&#x636E;&#x5E93;&#xFF1A;</h4>
 <ul>
-<li><p>Input file: INCAR POSCAR KPOINTS POTCAR</p>
+<li><p>CatApp data (Calculated reaction and activation energies for elementary coupling reactions occurring on metal surfaces)</p>
+<p><a href="http://dx.doi.org/10.1002/anie.201107947" target="_blank">CatApp: A Web Application for Surface Chemistry and Heterogeneous Catalysis</a></p>
+<p>Filetype: csv </p>
+<p>The csv-file has been converted to an ASE db-file using this script:</p>
+<p>```python
+import csv
+import ase.db
+from ase import Atoms</p>
 </li>
-<li><p>output file : OUTCAR CHGCAR WAVECAR</p>
+</ul>
+<p>  reader = csv.reader(open(&apos;catappdata.csv&apos;))
+  next(reader)  # skip header
+  with ase.db.connect(&apos;catapp.db&apos;, append=False) as con:
+      for er, ea, surface, ab, a, b, ref, url, dataset in reader:
+          if surface.startswith(&apos;HH- &apos;):
+              surf = surface[4:]
+          else:
+              surf = surface
+          keys = {}
+          words = surf.split()
+          if len(words) == 2:
+              surf, keys[&apos;site&apos;] = words
+          else:
+              surf, = words
+          symbols, facet = surf.split(&apos;(&apos;)
+          facet = &apos;(&apos; + facet
+          symbols = symbols.replace(&apos;-&apos;, &apos;&apos;)
+          atoms = Atoms(symbols, pbc=(True, True, False))
+          a, b, ab = (x if x[:2] != &apos;hf&apos; else x[2:] + &apos;/2&apos; for x in [a, b, ab])
+          for xc in [&apos;RPBE&apos;, &apos;PW91&apos;, &apos;BEEF&apos;]:
+              if xc in dataset:
+                  break
+          else:
+              xc = &apos;???&apos;
+          if ea:
+              keys[&apos;ea&apos;] = float(ea)
+          con.write(atoms, a=a, b=b, ab=ab, er=float(er),
+                    surface=surface, facet=facet,
+                    xc=xc, ref=ref, url=url, dataset=dataset,
+                    **keys)</p>
+<pre><code>
+  ![image-20191207111311292](..\vasp-tut-fig\image-20191207111311292.png)
+
+  Methane example:
+
+  Here we look at the correlation between the activation and reaction energy for this reaction:
+
+  $\ce{H*+CH3*-&gt;CH4}$
+
+  ```python
+  import matplotlib.pyplot as plt
+  import ase.db
+
+  con = ase.db.connect(&apos;catapp.db&apos;)
+  x = []
+  y = []
+  for row in con.select(a=&apos;H*&apos;, b=&apos;CH3*&apos;):
+      x.append(row.er)
+      y.append(row.ea)
+
+  plt.plot(x, y, &apos;o&apos;, label=&apos;H*+CH3*-&gt;CH4&apos;)
+  plt.legend()
+  plt.xlabel(&apos;reaction energy [eV]&apos;)
+  plt.ylabel(&apos;activation energy [eV]&apos;)
+  plt.savefig(&apos;ch4.svg&apos;)
+</code></pre><p>  &#x200B;    <img src="../vasp-tut-fig/ch4.png" alt="img"></p>
+<ul>
+<li><p><a href="https://cmr.fysik.dtu.dk/index.html" target="_blank">https://cmr.fysik.dtu.dk/index.html</a></p>
 </li>
-<li><p>complex computation: metadynamics (ICONST, PENALTYPOT)&#xFF1B;dimer&#x5BFB;&#x627E;&#x8FC7;&#x6E21;&#x6001;&#xFF08;MODECAR&#xFF09;&#xFF1B;&#x5404;&#x5411;&#x5F02;&#x6027;&#x4F18;&#x5316;&#x6676;&#x80DE;&#xFF08;OPTCELL&#xFF09;</p>
+<li><p>catMAP(see also in Chapter 11)&#xFF1A;&#x5F97;&#x5230;&#x63CF;&#x8FF0;&#x7B26;&#x4E0E;&#x4F53;&#x7CFB;&#x52A8;&#x529B;&#x5B66;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;</p>
 </li>
+</ul>
+<h4 id="d-band-center-theory">d band center theory:</h4>
+<ul>
+<li>see in [Fundamental Concepts in Heterogeneous Catalysis]</li>
+<li><a href="https://zhuanlan.zhihu.com/p/26230183" target="_blank">https://zhuanlan.zhihu.com/p/26230183</a></li>
+<li>d-band center&#x662F;substrate&#x7684;&#x6027;&#x8D28;</li>
+<li><a href="https://www.zhihu.com/question/46558379" target="_blank">https://www.zhihu.com/question/46558379</a></li>
+<li>The metal d-band hybridizes with the bonding (&#x3C3;) orbital of the adsorbate to form bonding (d-&#x3C3;) and antibonding (d-&#x3C3;)<em> states, as illustrated below. For the metals we are concerned with, the (d-&#x3C3;) state is full, but the extent of filling of the (d-&#x3C3;)</em> state depends on the local electronic structure of the metal at the surface, i.e. the surface DOS. An increased filling of the antibonding (d-&#x3C3;)<em> state corresponds to a destabilization of the metal-adsorbate interaction (and hence weaker binding). As it turns out, there is one experimentally-determinable parameter which correlates highly with the extent of filling of the (d-&#x3C3;)</em> MO: the location of the d-band center</li>
+<li><a href="https://sites.google.com/site/orrcatalysiswithptbasedcsnps/home/d-band-theory/results---location-of-d-band-center-for-various-bulk-alloys" target="_blank">https://sites.google.com/site/orrcatalysiswithptbasedcsnps/home/d-band-theory/results---location-of-d-band-center-for-various-bulk-alloys</a></li>
 </ul>
 
                                 
@@ -1036,12 +1110,12 @@
 
             
                 
-                <a href="../Chapter1/1-2.html" class="navigation navigation-prev " aria-label="Previous page: VASP+VTST Installation">
+                <a href="4-2.html" class="navigation navigation-prev " aria-label="Previous page: Band Structure计算">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-1.html" class="navigation navigation-next " aria-label="Next page: INCAR">
+                <a href="../Chapter5/" class="navigation navigation-next " aria-label="Next page: Chapter 5 Reaction Path ">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1052,7 +1126,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 2  Vasp Input & Output File","level":"1.3","depth":1,"next":{"title":"INCAR","level":"1.3.1","depth":2,"path":"Chapter2/2-1.md","ref":"Chapter2/2-1.md","articles":[]},"previous":{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"path":"Chapter1/1-2.md","ref":"Chapter1/1-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/README.md","mtime":"2020-03-27T05:12:36.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"表面吸附","level":"1.5.3","depth":2,"next":{"title":"Chapter 5 Reaction Path ","level":"1.6","depth":1,"path":"Chapter5/README.md","ref":"Chapter5/README.md","articles":[{"title":"Slab模型","level":"1.6.1","depth":2,"path":"Chapter5/5-1.md","ref":"Chapter5/5-1.md","articles":[]},{"title":"表面界面建模要点(经验小结)","level":"1.6.2","depth":2,"path":"Chapter5/5-2.md","ref":"Chapter5/5-2.md","articles":[]},{"title":"表面能的计算","level":"1.6.3","depth":2,"path":"Chapter5/5-3.md","ref":"Chapter5/5-3.md","articles":[]},{"title":"功函数（work function）的计算","level":"1.6.4","depth":2,"path":"Chapter5/5-4.md","ref":"Chapter5/5-4.md","articles":[]},{"title":"表面吸附以及模型的搭建思想","level":"1.6.5","depth":2,"path":"Chapter5/5-5.md","ref":"Chapter5/5-5.md","articles":[]},{"title":"Bader电荷计算","level":"1.6.6","depth":2,"path":"Chapter5/5-6.md","ref":"Chapter5/5-6.md","articles":[]},{"title":"过渡态计算","level":"1.6.7","depth":2,"path":"Chapter5/5-7.md","ref":"Chapter5/5-7.md","articles":[]},{"title":"过渡态方法理论","level":"1.6.8","depth":2,"path":"Chapter5/5-8/index.md","ref":"Chapter5/5-8/index.md","articles":[]},{"title":"常见问题","level":"1.6.9","depth":2,"path":"Chapter5/5-9.md","ref":"Chapter5/5-9.md","articles":[]}]},"previous":{"title":"Band Structure计算","level":"1.5.2","depth":2,"path":"Chapter4/4-2.md","ref":"Chapter4/4-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/4-3.md","mtime":"2020-03-27T09:38:09.374Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

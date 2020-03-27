@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Chapter 2  Vasp Input & Output File · GitBook</title>
+        <title>DOS计算 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-1.html" />
+    <link rel="next" href="4-2.html" />
     
     
-    <link rel="prev" href="../Chapter1/1-2.html" />
+    <link rel="prev" href="./" />
     
 
     </head>
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
             
-                <a href="./">
+                <a href="../Chapter2/">
             
                     
                     Chapter 2  Vasp Input & Output File
@@ -161,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
             
-                <a href="2-1.html">
+                <a href="../Chapter2/2-1.html">
             
                     
                     INCAR
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
             
-                <a href="2-2.html">
+                <a href="../Chapter2/2-2.html">
             
                     
                     other
@@ -250,9 +250,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+        <li class="chapter " data-level="1.5" data-path="./">
             
-                <a href="../Chapter4/">
+                <a href="./">
             
                     
                     Chapter 4 DOS & Band Structure
@@ -264,9 +264,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/4-1.html">
+        <li class="chapter active" data-level="1.5.1" data-path="4-1.html">
             
-                <a href="../Chapter4/4-1.html">
+                <a href="4-1.html">
             
                     
                     DOS计算
@@ -277,9 +277,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/4-2.html">
+        <li class="chapter " data-level="1.5.2" data-path="4-2.html">
             
-                <a href="../Chapter4/4-2.html">
+                <a href="4-2.html">
             
                     
                     Band Structure计算
@@ -290,9 +290,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../Chapter4/4-3.html">
+        <li class="chapter " data-level="1.5.3" data-path="4-3.html">
             
-                <a href="../Chapter4/4-3.html">
+                <a href="4-3.html">
             
                     
                     表面吸附
@@ -984,7 +984,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Chapter 2  Vasp Input & Output File</a>
+        <a href=".." >DOS计算</a>
     </h1>
 </div>
 
@@ -999,14 +999,75 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="chapter-2--vasp-input--output-file">Chapter 2  Vasp Input &amp; Output File</h1>
-<h4 id="overview">Overview:</h4>
+                                <h1 id="dos&#x8BA1;&#x7B97;">DOS&#x8BA1;&#x7B97;</h1>
 <ul>
-<li><p>Input file: INCAR POSCAR KPOINTS POTCAR</p>
+<li><p>&#x4E0E;&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x76F8;&#x6BD4;,&#x7B97;DOS&#x7684;&#x65F6;&#x5019;,&#x9700;&#x8981;&#x7528;&#x5230;&#x66F4;&#x591A;&#x7684;K&#x70B9;&#x6570;&#x76EE;,&#x8FD9;&#x662F;&#x56E0;&#x4E3A;K&#x70B9;&#x8D8A;&#x591A;,&#x753B;&#x51FA;&#x6765;&#x7684;DOS&#x56FE;&#x8D28;&#x91CF;&#x8D8A;&#x9AD8;  </p>
 </li>
-<li><p>output file : OUTCAR CHGCAR WAVECAR</p>
+<li><p>ISMEAR = -5 &#x7684;&#x65F6;&#x5019;(Bl&#xF6;chl&#x4FEE;&#x6B63;&#x7684;&#x56DB;&#x9762;&#x4F53;&#x65B9;&#x6CD5;),&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5E73;&#x6ED1;&#x7684;DOS&#x56FE;&#x3002;&#x5F88;&#x591A;&#x4EBA;&#x95EE;&#x600E;&#x4E48;&#x624D;&#x80FD;&#x83B7;&#x5F97;&#x5E73;&#x6ED1;&#x7684;DOS&#x56FE;,&#x8FD9;&#x5C31;&#x662F;&#x7B54;&#x6848;!!ISMEAR = -5 &#x5E76;&#x4E14;&#x4F7F;&#x7528;&#x8F83;&#x591A;&#x7684;K&#x70B9;&#x3002;</p>
+<blockquote>
+<p>&#x5982;&#x679C;&#x4F60;&#x7684;&#x6A21;&#x578B;&#x5F88;&#x5927;,&#x53EA;&#x7528;&#x4E86;&#x4E00;&#x4E2A;gamma&#x70B9;,&#x6216;&#x8005;K&#x70B9;&#x7684;&#x6570;&#x76EE;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;3 &#x7684;&#x65F6;&#x5019;,&#x4F7F;&#x7528;ISMEAR = -5 &#x4F1A;&#x5BFC;&#x81F4;&#x8BA1;&#x7B97;&#x51FA;&#x9519;  </p>
+<p>&#x5BF9;&#x4E8E;&#x91D1;&#x5C5E;&#x4F53;&#x7CFB;&#x6765;&#x8BF4;<strong>,&#x7B97;DOS&#x7684;&#x65F6;&#x5019;,&#x7ED3;&#x6784;&#x4FDD;&#x6301;&#x4E0D;&#x52A8;</strong>(&#x8FD9;&#x662F;&#x5173;&#x952E;),&#x53EF;&#x4EE5;&#x653E;&#x5FC3;&#x4F7F;&#x7528;ISMEAR= -5&#x3002;&#x4F46;&#x662F;,&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;ISMEAR= -5(&#x6CE8;&#x610F;:&#x662F;&#x4F18;&#x5316;&#x7ED3;&#x6784;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x80FD;&#x7528;!)  </p>
+<p>&#x534A;&#x5BFC;&#x4F53;&#x548C;&#x7EDD;&#x7F18;&#x4F53;&#x7684;&#x4F53;&#x7CFB;&#x53EF;&#x4EE5;&#x5C3D;&#x60C5;&#x4F7F;&#x7528;ISMEAR= -5,&#x4F46;<strong>&#x7EDD;&#x5BF9;&#x4E0D;&#x80FD;</strong>&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x4F53;&#x7CFB;&#x4E2D;&#x4F7F;&#x7528; ISMEAR&gt;0&#x3002;&#x7B49;&#x4E8E;0 &#x5219;&#x53EF;&#x4EE5;  </p>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x56DB;&#x9762;&#x4F53;&#x65B9;&#x6CD5;&#xFF08;ISMEAR = -5&#xFF09;<strong>&#x4E0D;&#x9002;&#x5408;&#x8BA1;&#x7B97;&#x80FD;&#x5E26;</strong>&#xFF08;&#x5BF9;&#x6240;&#x6709;&#x7684;&#x4F53;&#x7CFB;&#x6765;&#x8BF4;&#x7684;&#xFF09;  </p>
+<p>&#x4F7F;&#x7528;ISMEAR= -5 &#x7684;&#x65F6;&#x5019;,SIGMA&#x7684;&#x53D6;&#x503C;&#x6CA1;&#x6709;&#x5F71;&#x54CD;  </p>
+<p>&#x603B;&#x7ED3;:&#x7B97;DOS,&#x53EA;&#x8981;K&#x70B9;&#x4E0D;&#x5C11;&#x4E8E;3,&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#x90FD;&#x7528;ISMEAR=-5  </p>
+<p>&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x7ED9;&#x529B;,&#x4E0D;&#x80FD;&#x589E;&#x52A0;K&#x70B9;&#x7684;&#x65F6;&#x5019;,&#x600E;&#x4E48;&#x529E;?&#x53C8;&#x5206;&#x4E24;&#x79CD;&#x60C5;&#x51B5;:(&#x5C11;&#x8BB8;&#x6709;&#x4E9B;&#x7ED5;&#x5F2F;)  &#x2014;&#x2014;</p>
+<p><code>&#x534A;&#x5BFC;&#x4F53;&#x548C;&#x7EDD;&#x7F18;&#x4F53;,&#x4F7F;&#x7528;ISMEAR= 0 (Gaussian Smearing,&#x9AD8;&#x65AF;&#x5C55;&#x5BBD;,&#x540E;&#x9762;&#x7EDF;&#x4E00;&#x7B80;&#x79F0;GS&#x65B9;&#x6CD5;) ;(&#x518D;&#x6B21;&#x6CE8;&#x610F;:&#x6B64;&#x65F6;&#x7EDD;&#x5BF9;&#x4E0D;&#x80FD;&#x5927;&#x4E8E;0!!!)</code> </p>
+<p><code>&#x91D1;&#x5C5E;,&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ISMEAR = 0,&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Methfessel-Paxton (MP)&#x65B9;&#x6CD5;:&#x540E;&#x9762;&#x7EDF;&#x4E00;&#x7B80;&#x79F0;:MP&#x65B9;&#x6CD5;&#x3002; ISMEAR = 1, 2&#x2026;.N,&#x4E00;&#x822C;&#x6765;&#x8BF4;,ISMEAR =0&#x548C; 1 &#x57FA;&#x672C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;(&#x6CE8;&#x610F;:&#x91D1;&#x5C5E;&#x53EF;&#x4EE5;&#x7B49;&#x4E8E;0,&#x4E5F;&#x53EF;&#x5927;&#x4E8E;0)</code></p>
+<p><strong>MP&#x65B9;&#x6CD5;(ISMEAR=1..N):</strong>
+SIGMA&#x53D6;&#x503C;&#x592A;&#x5927;,&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#x7684;&#x80FD;&#x91CF;&#x53EF;&#x80FD;&#x4E0D;&#x6B63;&#x786E;;SIGMA&#x53D6;&#x503C;&#x8D8A;&#x5C0F;,&#x8BA1;&#x7B97;&#x8D8A;&#x7CBE;&#x786E;,&#x9700;&#x8981;&#x7684;&#x65F6;&#x95F4;&#x4E5F;&#x5C31;&#x8D8A;&#x591A;</p>
+<p>SIGMA&#x7684;&#x53D6;&#x503C;&#x548C;KPOINTS&#x5BC6;&#x5207;&#x76F8;&#x5173;,Kpoints&#x786E;&#x5B9A;&#x4E4B;&#x540E;,&#x4F7F;&#x7528;&#x591A;&#x5927;&#x7684;SIGMA&#x503C;,&#x5927;&#x5BB6;&#x6700;&#x597D;&#x6D4B;&#x8BD5;&#x4E00;&#x4E0B;&#x3002;  </p>
+<p>SIGMA&#x53D6;&#x503C;&#x5728;&#x4FDD;&#x8BC1;OUTCAR&#x4E2D;&apos; entropy T*S&apos; &#x8FD9;&#x9879;&#x7684;&#x80FD;&#x91CF;&#x5E73;&#x5747;&#x5230;&#x6BCF;&#x4E2A;&#x539F;&#x5B50;&#x4E0A;&#x5C0F;&#x4E8E; 1 meV&#x7684;&#x524D;&#x63D0;&#x4E0B;:&#x5C3D;&#x53EF;&#x80FD;&#x5730;&#x5927;&#x3002;&#x8FD9;&#x6837;&#x505A;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;&#x51C6;&#x786E;&#x5EA6;&#x7684;&#x540C;&#x65F6;&#x52A0;&#x5FEB;&#x6536;&#x655B;&#x901F;&#x5EA6;&#x3002;   </p>
+<p>1) &#x5BF9;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x7684;&#x4F53;&#x7CFB;&#x90FD;&#x80FD;&#x5F97;&#x5230;&#x7406;&#x60F3;&#x7684;&#x7ED3;&#x679C;;
+2) SIGMA&#x53D6;&#x503C;&#x6BD4;&#x8F83;&#x5927;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x5F97;&#x5230;&#x4E0E;MP&#x65B9;&#x6CD5;&#x76F8;&#x8FD1;&#x7684;&#x8BEF;&#x5DEE;;&#x4F46;&#x662F;&#x8BEF;&#x5DEE;&#x591A;&#x5927;,GS&#x65B9;&#x6CD5;&#x4E0D;&#x53EF;&#x4EE5;&#x5F97;&#x5230;,&#x800C;MP&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x3002;&#x4ECE;&#x8FD9;&#x4E00;&#x70B9;&#x4E0A;&#x6765;&#x8BF4;,MP&#x8981;&#x6BD4;GS&#x597D;&#x4E9B;;
+3) &#x4ECE;&#x7ECF;&#x9A8C;&#x4E0A;&#x6765;&#x8BF4;:&#x5BF9;&#x4E8E;&#x91D1;&#x5C5E;&#x4F53;&#x7CFB;,&#x4F7F;&#x7528;MP&#x65B9;&#x6CD5;(ISMEAR=1..N)&#x65F6;,SIGMA= 0.10 &#x8DB3;&#x591F;&#x4E86;,&#x5B98;&#x7F51;&#x7ED9;&#x7684;&#x53C2;&#x8003;&#x503C;&#x662F;0.20&#x3002;
+4) &#x4F7F;&#x7528;GS&#x65B9;&#x6CD5;&#x7684;&#x65F6;&#x5019;(ISMEAR=0),SIGMA&#x7684;&#x6570;&#x503C;&#x8981;&#x6D4B;&#x8BD5;&#x4E0B;,&#x4FDD;&#x8BC1;&apos;entropy T*S&apos;&#x8FD9;&#x4E00;&#x9879;&#x5E73;&#x5747;&#x5230;&#x6BCF;&#x4E2A;&#x539F;&#x5B50;&#x4E0A;&#x5C0F;&#x4E8E;0.001 eV&#x4E5F;&#x5C31;&#x662F;1meV&#x3002;5)&#x4E0D;&#x60F3;&#x6D4B;&#x8BD5;,&#x5BF9;&#x4E8E;&#x91D1;&#x5C5E;&#x4F53;&#x7CFB;:SIGMA=0.05&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5B89;&#x5168;&#x7684;&#x9009;&#x62E9;&#x3002;
+&#x5BF9;&#x4E8E;&#x534A;&#x5BFC;&#x4F53;&#x548C;&#x7EDD;&#x7F18;&#x4F53;,SIGMA&#x53D6;&#x503C;&#x8981;&#x5C0F;,SIGMA = 0.01 &#x2013; 0.05 &#x4E4B;&#x95F4;&#x4E5F;&#x662F;&#x5F88;&#x5B89;&#x5168;&#x7684;  </p>
+<p><strong>NOTE</strong>:</p>
+<p><strong>SIMGA&#x5C0F;&#x7684;&#x65F6;&#x5019;,ISMEAR = 0 &#x548C; ISMEAR = 1 &#x6548;&#x679C;&#x57FA;&#x672C;&#x4E00;&#x6837;;
+SIMGA&#x6570;&#x503C;&#x5927;&#x7684;&#x65F6;&#x5019;,ISMEAR= 1 &#x6548;&#x679C;&#x66F4;&#x597D;&#x3002;
+&#x6240;&#x4EE5;,&#x5982;&#x679C;&#x4F60;&#x9996;&#x5148;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x5F88;&#x5C0F;&#x7684;SIMGA&#x6570;&#x503C;,&#x4E0D;&#x7528;&#x592A;&#x62C5;&#x5FC3;ISMEAR&#x7684;&#x9009;&#x53D6;&#x3002;&#x4F46;&#x53CD;&#x8FC7;&#x6765;,&#x5982;&#x679C;&#x4F60;&#x9996;&#x5148;&#x8BBE;&#x7F6E;&#x4E86;ISMEAR&#x8FD9;&#x4E00;&#x9879;,&#x5C31;&#x9700;&#x8981;&#x8003;&#x8651;SIGMA&#x7684;&#x5927;&#x5C0F;&#x4E86;&#x3002;&#x61D2;&#x5F97;&#x8003;&#x8651;&#x5C31;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5C0F;&#x7684;SIGMA&#x503C;,&#x6BD4;&#x5982;0.05,&#x5373;&#x53EF; </strong></p>
+</blockquote>
+<p>&#x67E5;&#x770B;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#x811A;&#x672C;&#xFF1A;<code>grep LOOP+ */OUTCAR</code></p>
+<p><img src="../vasp-tut-fig/image-20191207105644735.png" alt="image-20191207105644735"></p>
 </li>
-<li><p>complex computation: metadynamics (ICONST, PENALTYPOT)&#xFF1B;dimer&#x5BFB;&#x627E;&#x8FC7;&#x6E21;&#x6001;&#xFF08;MODECAR&#xFF09;&#xFF1B;&#x5404;&#x5411;&#x5F02;&#x6027;&#x4F18;&#x5316;&#x6676;&#x80DE;&#xFF08;OPTCELL&#xFF09;</p>
+<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x8FD8;&#x8981;&#x7B97;2&#x6B65;&#x5462;&#xFF1A;</p>
+<p>1&#xFF09; &#x7531;&#x4E8E;&#x9AD8;&#x8D28;&#x91CF;&#x7684;DOS&#x9700;&#x8981;&#x7CBE;&#x7EC6;&#x7684;K&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8BBE;&#x7F6E;&#x7684;K&#x70B9;&#x5F88;&#x591A;&#xFF0C;&#x5C31;&#x4F1A;&#x9020;&#x6210;&#x8BA1;&#x7B97;&#x4E0A;&#x7684;&#x8D1F;&#x62C5;&#xFF0C;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BB2;&#x8FC7;K&#x70B9;&#x4E0E;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF1B;
+2&#xFF09; &#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x539F;&#x56E0;&#x5C31;&#x8BBE;&#x8BA1;&#x5230;&#x80FD;&#x5E26;&#x7684;&#x8BA1;&#x7B97;&#x4E86;&#xFF0C;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6458;&#x6284;&#x4E00;&#x4E0B;&#x7F51;&#x4E0A;&#x7684;&#x89E3;&#x91CA;&#xFF1A; &#x7531;&#x4E8E;&#x5728;&#x80FD;&#x5E26;&#x8BA1;&#x7B97;&#x65F6;k&#x70B9;&#x662F;&#x4E00;&#x4E9B;&#x5728;&#x5012;&#x7A7A;&#x95F4;&#x9AD8;&#x5BF9;&#x79F0;&#x7EBF;&#x4E0A;&#x7684;&#x70B9;&#xFF0C;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x81EA;&#x6D3D;&#x8BA1;&#x7B97;&#x3002;
+&#x53C2;&#x8003;&#x7F51;&#x5740;&#xFF1A;<a href="http://blog.sciencenet.cn/blog-567091-675253.html" target="_blank">http://blog.sciencenet.cn/blog-567091-675253.html</a> &#x4E5F;&#x5C31;&#x662F;&#x8BA1;&#x7B97;&#x80FD;&#x5E26;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x81EA;&#x6D3D;&#x8BA1;&#x7B97;&#x662F;&#x5FC5;&#x987B;&#x7684;&#x4E00;&#x6B65;&#xFF1B;
+3&#xFF09; &#x5373;&#x4F7F;&#x589E;&#x52A0;K&#x70B9;&#x7684;&#x6570;&#x76EE;&#xFF0C;&#x7535;&#x8377;&#x5BC6;&#x5EA6;&#x548C;&#x6709;&#x6548;&#x52BF;&#x80FD;&#x7684;&#x6536;&#x655B;&#x4F9D;&#x7136;&#x5F88;&#x5FEB;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;K&#x70B9;&#x7684;&#x53D8;&#x5316;&#x5BF9;&#x7535;&#x8377;&#x5BC6;&#x5EA6;&#x7684;&#x6536;&#x655B;&#x5F71;&#x54CD;&#x4E0D;&#x5927;&#x3002;  </p>
+</li>
+<li><p>&#x8BA1;&#x7B97;&#x6B65;&#x9AA4;&#xFF1A;</p>
+<ul>
+<li>&#x7ED3;&#x6784;&#x4F18;&#x5316;  </li>
+<li>&#x7528;&#x5C0F;&#x7684;K&#x70B9;&#x81EA;&#x6D3D;&#xFF0C;&#x4EA7;&#x751F;&#x7535;&#x5B50;&#x5BC6;&#x5EA6;&#xFF08;CHGCAR&#x6587;&#x4EF6;&#xFF09;  </li>
+<li>&#x589E;&#x52A0;K&#x70B9;&#xFF0C;&#x5E76;&#x4FDD;&#x6301;&#x524D;&#x9762;&#x4E00;&#x6B65;&#x7684;&#x7535;&#x5B50;&#x5BC6;&#x5EA6;&#x4E0D;&#x53D8;&#xFF08;ICHARG=11&#xFF09;  </li>
+</ul>
+</li>
+<li><p>LORBIT = 10 &#x628A;&#x6001;&#x5BC6;&#x5EA6;&#x5206;&#x89E3;&#x5230;&#x6BCF;&#x4E2A;&#x539F;&#x5B50;&#x4EE5;&#x53CA;&#x539F;&#x5B50;&#x7684;spd&#x8F68;&#x9053;&#x4E0A;&#x9762;&#xFF0C;&#x79F0;&#x4E3A;&#x4E3A;&#x5C40;&#x57DF;&#x6001;&#x5BC6;&#x5EA6;&#xFF0C;Local DOS (LDOS)
+LORBIT =11 &#x5728;10&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x8FD8;&#x8FDB;&#x4E00;&#x6B65;&#x5206;&#x89E3;&#x5230;px&#xFF0C;py&#xFF0C;pz&#x7B49;&#x8F68;&#x9053;&#x4E0A;&#xFF0C;&#x79F0;&#x4E3A;&#x6295;&#x5F71;&#x6001;&#x5BC6;&#x5EA6;&#xFF08;Projected DOS&#xFF09;&#x6216;&#x8005;&#x5206;&#x6CE2;&#x6001;&#x5BC6;&#x5EA6;(Partial DOS)&#xFF0C;&#x5373;PDOS&#x3002;&#x6240;&#x4EE5;LORBIT = 11&#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x6211;&#x4EEC;&#x66F4;&#x591A;&#x7684;&#x4FE1;&#x606F;&#x3002;  </p>
+</li>
+<li><p>WAVECAR&#x8BFB;&#x4E0D;&#x8BFB;  &#xFF1A;&#x8BF7;&#x7528;&#x9ED8;&#x8BA4;&#x503C;ISTART=1(&#x5B58;&#x5728;&#x5219;&#x8BFB;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x4E0D;&#x8BFB;)</p>
+</li>
+<li><p>&#x901A;&#x8FC7;2&#x6B65;&#x8BA1;&#x7B97;DOS&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x8981;&#x5FD8;&#x8BB0;LCHARG=.TRUE  </p>
+</li>
+<li><p>&#x4E00;&#x6B65;&#x8BA1;&#x7B97;DOS&#x5FC5;&#x987B;&#x7684;&#x53C2;&#x6570;&#xFF1A;
+1 ISMEAR = -5
+2 LORBIT = 11
+3 &#x9AD8;&#x5BC6;&#x5EA6;&#x7684;K&#x70B9;  </p>
+</li>
+<li><p>&#x4E24;&#x6B65;&#x8BA1;&#x7B97;DOS&#x5FC5;&#x987B;&#x7684;&#x53C2;&#x6570;:
+&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;
+ISMEAR = -5
+LCHARG = .TRUE.
+&#x7A0D;&#x5FAE;&#x4F4E;&#x5BC6;&#x5EA6;&#x7684;K&#x70B9;
+&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;
+ISMEAR = -5
+ICHARG = 11
+LORBIT = 11
+&#x9AD8;&#x5BC6;&#x5EA6;&#x7684;K&#x70B9;  </p>
+</li>
+<li><p>&#x6570;&#x636E;&#x540E;&#x5904;&#x7406;&#xFF1A;p4vasp&#x6216;vaspkit&#x5747;&#x53EF;</p>
 </li>
 </ul>
 
@@ -1036,12 +1097,12 @@
 
             
                 
-                <a href="../Chapter1/1-2.html" class="navigation navigation-prev " aria-label="Previous page: VASP+VTST Installation">
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Chapter 4 DOS & Band Structure">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-1.html" class="navigation navigation-next " aria-label="Next page: INCAR">
+                <a href="4-2.html" class="navigation navigation-next " aria-label="Next page: Band Structure计算">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1052,7 +1113,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 2  Vasp Input & Output File","level":"1.3","depth":1,"next":{"title":"INCAR","level":"1.3.1","depth":2,"path":"Chapter2/2-1.md","ref":"Chapter2/2-1.md","articles":[]},"previous":{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"path":"Chapter1/1-2.md","ref":"Chapter1/1-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/README.md","mtime":"2020-03-27T05:12:36.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DOS计算","level":"1.5.1","depth":2,"next":{"title":"Band Structure计算","level":"1.5.2","depth":2,"path":"Chapter4/4-2.md","ref":"Chapter4/4-2.md","articles":[]},"previous":{"title":"Chapter 4 DOS & Band Structure","level":"1.5","depth":1,"path":"Chapter4/README.md","ref":"Chapter4/README.md","articles":[{"title":"DOS计算","level":"1.5.1","depth":2,"path":"Chapter4/4-1.md","ref":"Chapter4/4-1.md","articles":[]},{"title":"Band Structure计算","level":"1.5.2","depth":2,"path":"Chapter4/4-2.md","ref":"Chapter4/4-2.md","articles":[]},{"title":"表面吸附","level":"1.5.3","depth":2,"path":"Chapter4/4-3.md","ref":"Chapter4/4-3.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter4/4-1.md","mtime":"2020-03-27T06:34:43.449Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

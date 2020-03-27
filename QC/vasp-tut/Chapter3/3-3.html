@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Chapter 2  Vasp Input & Output File · GitBook</title>
+        <title>常见问题 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="2-1.html" />
+    <link rel="next" href="../Chapter4/" />
     
     
-    <link rel="prev" href="../Chapter1/1-2.html" />
+    <link rel="prev" href="3-2.html" />
     
 
     </head>
@@ -147,9 +147,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="./">
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
             
-                <a href="./">
+                <a href="../Chapter2/">
             
                     
                     Chapter 2  Vasp Input & Output File
@@ -161,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="2-1.html">
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
             
-                <a href="2-1.html">
+                <a href="../Chapter2/2-1.html">
             
                     
                     INCAR
@@ -174,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="2-2.html">
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
             
-                <a href="2-2.html">
+                <a href="../Chapter2/2-2.html">
             
                     
                     other
@@ -192,9 +192,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+        <li class="chapter " data-level="1.4" data-path="./">
             
-                <a href="../Chapter3/">
+                <a href="./">
             
                     
                     Chapter 3 Convergence & Optimization
@@ -206,9 +206,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.4.1" data-path="../Chapter3/3-1.html">
+        <li class="chapter " data-level="1.4.1" data-path="3-1.html">
             
-                <a href="../Chapter3/3-1.html">
+                <a href="3-1.html">
             
                     
                     频率计算
@@ -219,9 +219,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="../Chapter3/3-2.html">
+        <li class="chapter " data-level="1.4.2" data-path="3-2.html">
             
-                <a href="../Chapter3/3-2.html">
+                <a href="3-2.html">
             
                     
                     应力计算
@@ -232,9 +232,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.3" data-path="../Chapter3/3-3.html">
+        <li class="chapter active" data-level="1.4.3" data-path="3-3.html">
             
-                <a href="../Chapter3/3-3.html">
+                <a href="3-3.html">
             
                     
                     常见问题
@@ -984,7 +984,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Chapter 2  Vasp Input & Output File</a>
+        <a href=".." >常见问题</a>
     </h1>
 </div>
 
@@ -999,16 +999,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="chapter-2--vasp-input--output-file">Chapter 2  Vasp Input &amp; Output File</h1>
-<h4 id="overview">Overview:</h4>
-<ul>
-<li><p>Input file: INCAR POSCAR KPOINTS POTCAR</p>
-</li>
-<li><p>output file : OUTCAR CHGCAR WAVECAR</p>
-</li>
-<li><p>complex computation: metadynamics (ICONST, PENALTYPOT)&#xFF1B;dimer&#x5BFB;&#x627E;&#x8FC7;&#x6E21;&#x6001;&#xFF08;MODECAR&#xFF09;&#xFF1B;&#x5404;&#x5411;&#x5F02;&#x6027;&#x4F18;&#x5316;&#x6676;&#x80DE;&#xFF08;OPTCELL&#xFF09;</p>
-</li>
-</ul>
+                                <h1 id="&#x5E38;&#x89C1;&#x95EE;&#x9898;">&#x5E38;&#x89C1;&#x95EE;&#x9898;</h1>
+<h4 id="scf&#x4E0D;&#x6536;&#x655B;">SCF&#x4E0D;&#x6536;&#x655B;</h4>
+<p>&#xFF08;1&#xFF09;&#x5148;&#x68C0;&#x67E5;<strong>&#x521D;&#x59CB;&#x51E0;&#x4F55;&#x7ED3;&#x6784;</strong>&#x662F;&#x4E0D;&#x662F;&#x5408;&#x7406;&#xFF0C;&#x975E;&#x5E38;&#x79BB;&#x8C31;&#x7684;&#x521D;&#x59CB;&#x7ED3;&#x6784;&#x4F1A;&#x5BFC;&#x81F4;SCF&#x96BE;&#x6536;&#x655B;&#x3002;</p>
+<p>&#xFF08;2&#xFF09;&#x68C0;&#x67E5;&#x521D;&#x59CB;<strong>&#x78C1;&#x77E9;&#x8BBE;&#x7F6E;(MAGMOM)</strong>&#x662F;&#x5426;&#x5408;&#x7406;&#xFF0C;&#x5BF9;&#x4E8E;&#x65E0;&#x78C1;&#x6027;&#x4F53;&#x7CFB;&#x7ED9;&#x4E0E;&#x9ED8;&#x8BA4;&#x7684;&#x78C1;&#x77E9;&#x6216;&#x8005;&#x9AD8;&#x521D;&#x59CB;&#x78C1;&#x77E9;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;Error EDDDAV: Call to ZHEGV failed&#x62A5;&#x9519;&#x3002;&#x7279;&#x6B8A;&#x7684;&#x78C1;&#x6027;&#x6392;&#x5217;&#x7684;&#x4F53;&#x7CFB;(AFM, FM)&#xFF0C;MAGMOM&#x8981;&#x8BBE;&#x7F6E;&#x5408;&#x7406;&#x3002;</p>
+<p>&#xFF08;3&#xFF09;&#x5BF9;&#x4E8E;DFT+U&#x548C;ICHARGE=11&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x6DFB;&#x52A0;<strong>LMAXMIN</strong>=4 (&#x5BF9;&#x4E8E;d&#x533A;&#x4F53;&#x7CFB;)&#xFF0C;&#x6DFB;&#x52A0;LMAXMIN=6 (&#x5BF9;&#x4E8E;f&#x533A;&#x4F53;&#x7CFB;)&#x3002;</p>
+<p>&#xFF08;4&#xFF09;&#x68C0;&#x67E5;&#x662F;&#x4E0D;&#x662F;ISTART=1 &#x6216; ICHARG = 1&#x8BFB;&#x53D6;&#x4E86;&#x4E0D;&#x5408;&#x7406;&#x7684;&#x6CE2;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x662F;&#xFF0C;rm WAVECAR CHGCAR&#x91CD;&#x65B0;&#x8DD1;&#x3002;</p>
+<p>&#xFF08;5&#xFF09;&#x66F4;&#x6362;<strong>ALGO</strong>&#xFF0C;Fast&#x6216;VeryFast&#xFF0C;&#x6216;Normal&#x3002;</p>
+<p>&#xFF08;6&#xFF09;&#x5BF9;&#x4E8E;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x8BA1;&#x7B97;&#x4F7F;&#x7528;ALGO=All&#xFF0C;&#x6216;ALGO=Damped&#x3002;&#xFF08;&#x6B64;&#x6CD5;&#x4E5F;&#x53EF;&#x7528;&#x4E8E; &#x975E;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;SCF&#x6536;&#x655B;&#x4EE5;&#x540E;&#x8981;&#x8BFB;&#x53D6;WAVECAR&#x518D;&#x7528;ALGO=Fast&#x6216;Normal&#x91CD;&#x65B0;&#x6536;&#x655B;&#x4E00;&#x904D;&#xFF09;</p>
+<p>&#xFF08;7&#xFF09;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x66F4;&#x5927;&#x7684;<strong>SIGMA</strong>&#x503C;&#xFF0C;&#x5982;SIGMA=0.5&#xFF0C;&#x5148;&#x7C97;&#x7565;&#x6536;&#x655B;&#xFF0C;&#x518D;&#x8BFB;&#x53D6;WAVECAR&#x7528;&#x5C0F;&#x7684;SIGMA&#x8BA1;&#x7B97;&#x3002;(&#x6B64;&#x65B9;&#x6CD5;&#x7ECF;&#x5E38;&#x594F;&#x6548;&#xFF0C;&#x4F46;&#x662F;&#x8BFB;&#x6CE2;&#x51FD;&#x6570;&#x518D;&#x6B21;&#x7528;&#x5C0F;SIGMA&#x4F18;&#x5316;&#x6709;&#x53EF;&#x80FD;&#x78B0;&#x5230;&#x4ECD;&#x4E0D;&#x6536;&#x655B;&#x7684;&#x60C5;&#x51B5;&#x3002;)</p>
+<p>&#xFF08;8&#xFF09;&#x5BF9;&#x4E8E;&#x975E;&#x78C1;&#x6027;&#x4F53;&#x7CFB;&#xFF08;&#x95ED;&#x58F3;&#x5C42;ISPIN=1&#xFF09;&#x6DFB;&#x52A0;&#xFF1A;&#xFF08;&#x6CE8;&#x610F;AMIX&#x548C;BMIX&#x5BF9;&#x6536;&#x655B;&#x6709;&#x5F88;&#x5927;&#x5F71;&#x54CD;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x8C03;&#x8BD5;&#xFF09;</p>
+<pre><code>AMIX = 0.2
+BMIX = 0.0001 #almost zero, but 0 will crash some versions
+</code></pre><p>&#xFF08;9&#xFF09;&#x5BF9;&#x4E8E;&#x78C1;&#x6027;&#x4F53;&#x7CFB;&#xFF08;&#x81EA;&#x65CB;&#x6781;&#x5316;&#xFF0C;ISPIN=2&#xFF09;&#x6DFB;&#x52A0;&#xFF1A;</p>
+<pre><code>AMIX = 0.2
+BMIX = 0.0001 #almost zero, but 0 will crash some versions
+AMIX MAG = 0.8
+BMIX MAG = 0.0001 #almost zero, but 0 will crash some versions
+</code></pre><p>(10) &#x5076;&#x6781;&#x77EB;&#x6B63;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x5F97;SCF&#x53D8;&#x56F0;&#x96BE;&#xFF0C;&#x53EF;&#x4EE5;&#x628A;&#x5076;&#x6781;&#x77EB;&#x6B63;&#x53C2;&#x6570;LDIPOL&#xFF0C;IDIPOL&#x5220;&#x6389;&#x8BD5;&#x8BD5;&#x3002;</p>
+<p>(11) &#x5C1D;&#x8BD5;&#x66F4;&#x6362;&#x4E0D;&#x540C;&#x7684;ISMEAR&#x3002;&#xFF08;&#x91D1;&#x5C5E;&#x7B49;&#x5BFC;&#x4F53;&#x7528;ISMEAR &gt;= 1&#xFF0C;&#x534A;&#x5BFC;&#x4F53;&#x7528;ISMEAR = 0&#xFF09;</p>
+<p>(12) &#x63D0;&#x9AD8;&#x79EF;&#x5206;&#x7CBE;&#x5EA6;&#xFF0C;PREC=Accurate&#xFF0C;&#x63D0;&#x9AD8;&#x8F85;&#x52A9;&#x683C;&#x70B9;&#x7CBE;&#x5EA6;&#xFF0C;ADDGRID = .TRUE. &#x3002;</p>
+<p>(13) &#x6362;&#x7528;&#x4E0D;&#x540C;K&#x70B9;&#x8BA1;&#x7B97;&#x6536;&#x655B;&#xFF0C;&#x518D;&#x8BFB;&#x53D6;CHGCAR&#xFF0C;&#x7528;&#x9AD8;K&#x70B9;&#x8BA1;&#x7B97;&#x3002;</p>
+<p>(14) &#x5982;&#x679C;&#x5728;&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x6216;&#x8005;MD&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x67D0;&#x4E00;&#x6B65;&#x7A81;&#x7136;&#x4E0D;&#x6536;&#x655B;&#xFF0C;&#x4F7F;&#x7528;MAXMIX = 50</p>
+<p>(15) &#x5C1D;&#x8BD5;&#x7528;&#x66F4;&#x5C0F;&#x7684;ENCUT&#x6216;&#x8005;&#x66F4;&#x5927;&#x7684;ENCUT&#x7684;&#x9884;&#x6536;&#x655B;&#x3002;</p>
+<p>(16) &#x6362;&#x66F4;&#x5C0F;&#x7684;&#x8D5D;&#x52BF;&#x6216;&#x8005;&#x66F4;soft&#x7684;&#x8D5D;&#x52BF;&#x3002;</p>
+<h4 id="&#x51E0;&#x4F55;&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x4E0D;&#x6536;&#x655B;">&#x51E0;&#x4F55;&#x7ED3;&#x6784;&#x4F18;&#x5316;&#x4E0D;&#x6536;&#x655B;</h4>
+<p>&#xFF08;1&#xFF09;&#x5982;&#x679C;&#x529B;&#x5728;&#x63A5;&#x8FD1;&#x6536;&#x655B;&#x7684;&#x533A;&#x57DF;&#x9707;&#x8361;&#xFF0C;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x7535;&#x5B50;&#x6B65;&#x7CBE;&#x5EA6;&#x4E0D;&#x591F;&#x9AD8;&#xFF0C;&#x5C1D;&#x8BD5;EDIFF=1E-6&#x6216;&#x8005;EDIFF = 1E-7</p>
+<p>&#xFF08;2&#xFF09;&#x5982;&#x679C;&#x529B;&#x5728;&#x63A5;&#x8FD1;&#x6536;&#x655B;&#x7684;&#x533A;&#x57DF;&#x9707;&#x8361;&#x5C1D;&#x8BD5;IBRION=1</p>
+<p>&#xFF08;3&#xFF09;&#x5982;&#x679C;&#x521D;&#x59CB;&#x7ED3;&#x6784;&#x4E0D;&#x597D;&#xFF0C;&#x6216;&#x8005;&#x5728;&#x4F18;&#x5316;&#x7684;&#x524D;&#x51E0;&#x6B65;&#x7ED3;&#x6784;&#x5C31;&#x5D29;&#x4E86;&#xFF0C;IBRION=2&#xFF0C;&#x6B65;&#x957F;<strong>POTIM&#x7F29;&#x5C0F;</strong>&#x5230;0.2&#x6216;0.1&#x3002;&#xFF08;&#x5C24;&#x5176;&#x662F;&#x5BF9;&#x53CC;&#x539F;&#x5B50;&#x5206;&#x5B50;&#x7684;&#x4F18;&#x5316;&#xFF0C;&#x8981;&#x9650;&#x5236;&#x6B65;&#x957F;&#xFF09;&#x3002;&#x5982;&#x679C;&#x5728;&#x6781;&#x5C0F;&#x70B9;&#x9644;&#x8FD1;&#x51FA;&#x73B0;&#x9707;&#x8361;&#xFF0C;POTIM&#x53EF;&#x4EE5;&#x7F29;&#x5C0F;&#x5230;0.05&#x3002;</p>
+<p>&#xFF08;4&#xFF09;&#x8C03;&#x6574;&#x521D;&#x59CB;&#x7ED3;&#x6784;&#x3002;&#x8FC7;&#x6E21;&#x6001;&#x4F18;&#x5316;&#x5931;&#x8D25;&#x4E0D;&#x6536;&#x655B;&#x6700;&#x5927;&#x7684;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x521D;&#x59CB;&#x7ED3;&#x6784;&#x4E0D;&#x5408;&#x7406;&#x3002;</p>
+<p>&#xFF08;5&#xFF09;&#x5982;&#x679C;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x590D;&#x6742;&#xFF0C;&#x539F;&#x5B50;&#x591A;&#x5BFC;&#x81F4;&#x7ED3;&#x6784;&#x6536;&#x655B;&#x6162;&#xFF0C;&#x529B;&#x6536;&#x655B;&#x8D8B;&#x52BF;&#x548C;&#x80FD;&#x91CF;&#x6536;&#x655B;&#x8D8B;&#x52BF;&#x5411;&#x4E0B;&#xFF0C;&#x5C1D;&#x8BD5;&#x589E;&#x52A0;&#x6536;&#x655B;&#x6B65;&#x6570;&#xFF0C;NSW=1000&#x3002;&#x5C24;&#x5176;&#x662F;&#x5BF9;&#x4E8E;&#x52A0;&#x4E86;vdW&#x6821;&#x6B63;&#x7684;&#xFF0C;&#x4F18;&#x5316;&#x6536;&#x655B;&#x4F1A;&#x53D8;&#x5F97;&#x975E;&#x5E38;&#x6162;&#x3002;</p>
+<p>&#xFF08;6&#xFF09;&#x5C1D;&#x8BD5;IBRION=3&#xFF0C;&#x963B;&#x5C3C;md&#x7684;&#x65B9;&#x6CD5;&#x5F80;&#x5F80;&#x5BF9;&#x8D85;&#x5927;&#x4F53;&#x7CFB;&#x6536;&#x655B;&#x6548;&#x679C;&#x597D;&#x3002;</p>
+<p>&#xFF08;7&#xFF09;&#x8C03;&#x6574;&#x6676;&#x4F53;&#x7684;&#x5BF9;&#x79F0;&#x6027;&#xFF0C;&#x6216;&#x5148;&#x4F7F;&#x7528;ISYM=0&#x4F18;&#x5316;&#xFF0C;&#x5982;&#x679C;&#x4F18;&#x5316;&#x4E00;&#x5F00;&#x59CB;&#x7684;&#x521D;&#x731C;&#x7ED3;&#x6784;&#x5177;&#x6709;&#x8F83;&#x9AD8;&#x5BF9;&#x79F0;&#x6027;&#xFF0C;&#x90A3;&#x4E48;&#x4F18;&#x5316;&#x8FC7;&#x7A0B;&#x4E2D;&#x8FD9;&#x4E2A;&#x5BF9;&#x79F0;&#x6027;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x4F1A;&#x4E00;&#x76F4;&#x4FDD;&#x6301;&#x3002;&#x5982;&#x679C;&#x5B9E;&#x9645;&#x4E0A;&#x4F53;&#x7CFB;&#x672C;&#x8EAB;&#x52BF;&#x80FD;&#x9762;&#x6781;&#x5C0F;&#x70B9;&#x7684;&#x7ED3;&#x6784;&#x5E76;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x9AD8;&#x7684;&#x5BF9;&#x79F0;&#x6027;&#xFF0C;&#x5219;&#x5F88;&#x5BB9;&#x6613;&#x9020;&#x6210;&#x4F18;&#x5316;&#x4E0D;&#x80FD;&#x6536;&#x655B;&#xFF0C;&#x800C;&#x4E14;&#x5373;&#x4FBF;&#x6536;&#x655B;&#x4E86;&#x4E5F;&#x4F1A;&#x6709;&#x865A;&#x9891;&#x3002;</p>
+<p>&#xFF08;8&#xFF09;&#x6539;&#x53D8;&#x6536;&#x655B;&#x6807;&#x51C6;&#xFF1A;&#x51E0;&#x4F55;&#x4F18;&#x5316;&#x7684;&#x6536;&#x655B;&#x6807;&#x51C6;&#x4E00;&#x822C;&#x4E3A;EDIFFG= -0.02&#xFF0C;</p>
+<p>&#x5BF9;&#x4E8E;&#x4F53;&#x7CFB;&#x8F83;&#x5927;&#x96BE;&#x4EE5;&#x6536;&#x655B;&#x7684;&#x4F53;&#x7CFB;&#xFF0C;&#x89C1;&#x5230;&#x6587;&#x732E;&#x91CC;&#x6709;&#x7528;EDIFFG= -0.05&#x7684;&#x3002;&#x4F46;&#x662F;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x66F4;&#x5927;&#x7684;&#x6536;&#x655B;&#x6807;&#x51C6;&#x4E86;&#x3002;</p>
+<p>&#xFF08;9&#xFF09;&#x4F7F;&#x7528;&#x66F4;&#x7CBE;&#x786E;&#x7684;&#x79EF;&#x5206;&#x683C;&#x70B9;&#x7CBE;&#x5EA6;&#xFF0C;PREC=Accurate&#x7B49;&#x3002;</p>
 
                                 
                                 </section>
@@ -1036,12 +1061,12 @@
 
             
                 
-                <a href="../Chapter1/1-2.html" class="navigation navigation-prev " aria-label="Previous page: VASP+VTST Installation">
+                <a href="3-2.html" class="navigation navigation-prev " aria-label="Previous page: 应力计算">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="2-1.html" class="navigation navigation-next " aria-label="Next page: INCAR">
+                <a href="../Chapter4/" class="navigation navigation-next " aria-label="Next page: Chapter 4 DOS & Band Structure">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1052,7 +1077,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Chapter 2  Vasp Input & Output File","level":"1.3","depth":1,"next":{"title":"INCAR","level":"1.3.1","depth":2,"path":"Chapter2/2-1.md","ref":"Chapter2/2-1.md","articles":[]},"previous":{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"path":"Chapter1/1-2.md","ref":"Chapter1/1-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter2/README.md","mtime":"2020-03-27T05:12:36.226Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"常见问题","level":"1.4.3","depth":2,"next":{"title":"Chapter 4 DOS & Band Structure","level":"1.5","depth":1,"path":"Chapter4/README.md","ref":"Chapter4/README.md","articles":[{"title":"DOS计算","level":"1.5.1","depth":2,"path":"Chapter4/4-1.md","ref":"Chapter4/4-1.md","articles":[]},{"title":"Band Structure计算","level":"1.5.2","depth":2,"path":"Chapter4/4-2.md","ref":"Chapter4/4-2.md","articles":[]},{"title":"表面吸附","level":"1.5.3","depth":2,"path":"Chapter4/4-3.md","ref":"Chapter4/4-3.md","articles":[]}]},"previous":{"title":"应力计算","level":"1.4.2","depth":2,"path":"Chapter3/3-2.md","ref":"Chapter3/3-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter3/3-3.md","mtime":"2020-03-27T06:31:25.595Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
