@@ -1,0 +1,1342 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>计算Band Structure · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="8-4.html" />
+    
+    
+    <link rel="prev" href="8-2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Chapter1/">
+            
+                <a href="../Chapter1/">
+            
+                    
+                    Chapter 1 Installation & Preparation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Chapter1/1-1.html">
+            
+                <a href="../Chapter1/1-1.html">
+            
+                    
+                    General VASP version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Chapter1/1-2.html">
+            
+                <a href="../Chapter1/1-2.html">
+            
+                    
+                    VASP+VTST Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    Chapter 2  Vasp Input & Output File
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
+            
+                <a href="../Chapter2/2-1.html">
+            
+                    
+                    INCAR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
+            
+                <a href="../Chapter2/2-2.html">
+            
+                    
+                    other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Chapter 3 Convergence & Optimization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../Chapter3/3-1.html">
+            
+                <a href="../Chapter3/3-1.html">
+            
+                    
+                    频率计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../Chapter3/3-2.html">
+            
+                <a href="../Chapter3/3-2.html">
+            
+                    
+                    应力计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../Chapter3/3-3.html">
+            
+                <a href="../Chapter3/3-3.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Chapter4/">
+            
+                <a href="../Chapter4/">
+            
+                    
+                    Chapter 4 DOS & Band Structure
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../Chapter4/4-1.html">
+            
+                <a href="../Chapter4/4-1.html">
+            
+                    
+                    DOS计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../Chapter4/4-2.html">
+            
+                <a href="../Chapter4/4-2.html">
+            
+                    
+                    Band Structure计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../Chapter4/4-3.html">
+            
+                <a href="../Chapter4/4-3.html">
+            
+                    
+                    表面吸附
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../Chapter5/">
+            
+                <a href="../Chapter5/">
+            
+                    
+                    Chapter 5 Reaction Path 
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../Chapter5/5-1.html">
+            
+                <a href="../Chapter5/5-1.html">
+            
+                    
+                    Slab模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../Chapter5/5-2.html">
+            
+                <a href="../Chapter5/5-2.html">
+            
+                    
+                    表面界面建模要点(经验小结)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../Chapter5/5-3.html">
+            
+                <a href="../Chapter5/5-3.html">
+            
+                    
+                    表面能的计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../Chapter5/5-4.html">
+            
+                <a href="../Chapter5/5-4.html">
+            
+                    
+                    功函数（work function）的计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../Chapter5/5-5.html">
+            
+                <a href="../Chapter5/5-5.html">
+            
+                    
+                    表面吸附以及模型的搭建思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../Chapter5/5-6.html">
+            
+                <a href="../Chapter5/5-6.html">
+            
+                    
+                    Bader电荷计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../Chapter5/5-7.html">
+            
+                <a href="../Chapter5/5-7.html">
+            
+                    
+                    过渡态计算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../Chapter5/5-8/">
+            
+                <a href="../Chapter5/5-8/">
+            
+                    
+                    过渡态方法理论
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../Chapter5/5-9.html">
+            
+                <a href="../Chapter5/5-9.html">
+            
+                    
+                    常见问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Chapter6/">
+            
+                <a href="../Chapter6/">
+            
+                    
+                    Chapter 6 VASP Mannul Review
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../Chapter6/6-1.html">
+            
+                <a href="../Chapter6/6-1.html">
+            
+                    
+                    DFT+U Calculation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../Chapter6/6-1.html">
+            
+                <a href="../Chapter6/6-1.html">
+            
+                    
+                    SOC (Spin-orbital Coupling)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Chapter7/">
+            
+                <a href="../Chapter7/">
+            
+                    
+                    Chapter 7 VASP Ab initio MD
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Chapter 8 Tools collection $Alfheim$：vaspkit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="8-1.html">
+            
+                <a href="8-1.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="8-2.html">
+            
+                <a href="8-2.html">
+            
+                    
+                    输入文件生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.3" data-path="8-3.html">
+            
+                <a href="8-3.html">
+            
+                    
+                    计算Band Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="8-4.html">
+            
+                <a href="8-4.html">
+            
+                    
+                    计算DOS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="8-5.html">
+            
+                <a href="8-5.html">
+            
+                    
+                    热力学能量校正
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="8-6.html">
+            
+                <a href="8-6.html">
+            
+                    
+                    结构编辑与对称工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="8-7.html">
+            
+                <a href="8-7.html">
+            
+                    
+                    密度相关
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="8-8.html">
+            
+                <a href="8-8.html">
+            
+                    
+                    过渡态可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../Chapter9/">
+            
+                <a href="../Chapter9/">
+            
+                    
+                    Chapter 9 Tools collection $Muspellheim$: pymatgen
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../Chapter9/9-1.html">
+            
+                <a href="../Chapter9/9-1.html">
+            
+                    
+                    Materials Project API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../Chapter9/9-2.html">
+            
+                <a href="../Chapter9/9-2.html">
+            
+                    
+                    自动切割表面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../Chapter9/9-3.html">
+            
+                <a href="../Chapter9/9-3.html">
+            
+                    
+                    自动生成吸附模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../Chapter9/9-4.html">
+            
+                <a href="../Chapter9/9-4.html">
+            
+                    
+                    画能带图方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../Chapter9/9-5.html">
+            
+                <a href="../Chapter9/9-5.html">
+            
+                    
+                    Mannul Collection
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../Chapter10/">
+            
+                <a href="../Chapter10/">
+            
+                    
+                    Chapter 10 Tools collection $Mannheim$: ASE
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Chapter11/">
+            
+                <a href="../Chapter11/">
+            
+                    
+                    Chapter 11 Tools collection $Vanaheim$: CatMAP & CatAPP & Catlearn
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../Chapter11/11-1.html">
+            
+                <a href="../Chapter11/11-1.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../Chapter11/11-2.html">
+            
+                <a href="../Chapter11/11-2.html">
+            
+                    
+                    CatMAP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../Chapter11/11-3.html">
+            
+                <a href="../Chapter11/11-3.html">
+            
+                    
+                    CatAPP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../Chapter11/11-4.html">
+            
+                <a href="../Chapter11/11-4.html">
+            
+                    
+                    Catlearn
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="../Chapter12/">
+            
+                <a href="../Chapter12/">
+            
+                    
+                    Chapter 12 Tools collection $Svartalfheim$: Tamkin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="../Chapter12/12-1.html">
+            
+                <a href="../Chapter12/12-1.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="../Chapter12/12-2.html">
+            
+                <a href="../Chapter12/12-2.html">
+            
+                    
+                    Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="../Chapter12/12-3.html">
+            
+                <a href="../Chapter12/12-3.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../Chapter13/">
+            
+                <a href="../Chapter13/">
+            
+                    
+                    Chapter 13 Tools collection $Neohero$: Pymatflow
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../Chapter13/13-1.html">
+            
+                <a href="../Chapter13/13-1.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../Chapter13/13-2.html">
+            
+                <a href="../Chapter13/13-2.html">
+            
+                    
+                    VASP
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="../Chapter15/">
+            
+                <a href="../Chapter15/">
+            
+                    
+                    Chapter 15 Tools collection $Anonyous$
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.15.1" data-path="../Chapter15/15-1.html">
+            
+                <a href="../Chapter15/15-1.html">
+            
+                    
+                    ELASTOOL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.2" data-path="../Chapter15/15-2.html">
+            
+                <a href="../Chapter15/15-2.html">
+            
+                    
+                    PHASEGO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15.3" data-path="../Chapter15/15-3.html">
+            
+                <a href="../Chapter15/15-3.html">
+            
+                    
+                    MUSE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >计算Band Structure</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8BA1;&#x7B97;band-structure">&#x8BA1;&#x7B97;Band Structure</h1>
+<ul>
+<li><p>&#x9884;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF1A;&#x9700;&#x8981;&#x51C6;&#x5907;&#x4E00;&#x4E2A;&#x5355;&#x80DE;&#x4EE5;&#x53CA;&#x5BF9;&#x5E94;&#x7684;K&#x70B9;&#x8DEF;&#x5F84;&#xFF08;&#x5728;&#x4E0D;&#x53EF;&#x7EA6;Brillouin&#x533A;&#xFF09;&#x3002;K&#x70B9;&#x8DEF;&#x5F84;&#x4E0D;&#x662F;&#x552F;&#x4E00;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x662F;&#x5FC5;&#x987B;&#x9009;&#x62E9;&#x6240;&#x6709;&#x9AD8;&#x5BF9;&#x79F0;&#x70B9;&#xFF0C;&#x9009;&#x62E9;&#x6709;&#x4EE3;&#x8868;&#x6027;&#x548C;&#x91CD;&#x8981;&#x7684;&#x7EBF;&#x5373;&#x53EF;&#x3002;&#x5BF9;&#x4E8E;<strong>&#x5927;&#x5C3A;&#x5EA6;&#x4E0E;&#x9AD8;&#x901A;&#x91CF;&#x8BA1;&#x7B97;</strong>&#xFF0C;&#x5B58;&#x5728;&#x7740;&#x901A;&#x8FC7;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#x5B9A;&#x4E49;&#x8DEF;&#x5F84;&#x7684;&#x89C4;&#x5219;&#x3002;pymatgen&#x548C;seeK-path&#x63D0;&#x4F9B;&#x4E86;&#x4E09;&#x7EF4;&#x4F53;&#x7CFB;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;vaspkit&#x5305;&#x542B;1D&#xFF0C;2D&#xFF0C;3D&#x6750;&#x6599;&#x751F;&#x6210;K&#x70B9;&#x8DEF;&#x5F84;&#x7684;&#x65B9;&#x6848;&#x3002;</p>
+<p>pymatgen&#xFF08;<a href="https://pymatgen.org/&#xFF09;Computational" target="_blank">https://pymatgen.org/&#xFF09;Computational</a> Materials Science 49 (2010) 299&#x2013;312.
+seeK-path&#xFF08;<a href="https://www.materialscloud.org/work/tools/seekpath&#xFF09;Computational" target="_blank">https://www.materialscloud.org/work/tools/seekpath&#xFF09;Computational</a> Materials Science 128 (2017) 140&#x2013;184.</p>
+</li>
+<li><p>vaspkit&#x901A;&#x8FC7;301&#x3001;302&#x3001;303&#x751F;&#x6210;1D&#xFF0C;2D&#xFF0C;3D&#x6750;&#x6599;&#x7684;K&#x70B9;&#x8DEF;&#x5F84;</p>
+<blockquote>
+<p>&#x4F8B;&#x5982;&#xFF1A;$\ce{MoS2}$&#x7684;K&#x70B9;&#x8DEF;&#x5F84;&#x751F;&#x6210;</p>
+<ul>
+<li><p>&#x51C6;&#x5907;$\ce{MoS2}$&#x7684;POSCAR&#xFF0C;&#x7531;&#x4E8E;vaspkit&#x751F;&#x6210;&#x8BE5;K&#x70B9;&#x8DEF;&#x5F84;&#x9700;&#x8981;&#x57FA;&#x4E8E;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x5355;&#x80DE;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x5148;&#x6807;&#x51C6;&#x5316;POSCAR&#x3002;&#x5BF9;&#x4E8E;2D&#x6750;&#x6599;&#xFF0C;&#x9700;&#x8981;&#x63A7;&#x5236;&#x4E8C;&#x7EF4;&#x6750;&#x6599;z&#x8F74;&#x5750;&#x6807;&#x7684;&#x4E2D;&#x5FC3;&#x5728;$|c|/2$&#x3002;&#x8FD9;&#x4E00;&#x6B65;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;vaspkit&#x7684;921&#x6216;923&#x7684;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x3002;&#x5176;&#x6D41;&#x7A0B;&#xFF08;923&#xFF09;&#x4E3A;&#x5148;&#x5728;Z&#x8F74;&#x4E0A;&#x52A0;&#x4E0A;&#x771F;&#x7A7A;&#x5C42;&#xFF0C;&#x7136;&#x540E;&#x5C06;2D&#x6750;&#x6599;&#x653E;&#x7F6E;&#x5728;z&#x5750;&#x6807;&#x7684;&#x4E2D;&#x5FC3;&#x3002;</p>
+</li>
+<li><p>&#x5BF9;&#x4E8E;3D&#x6750;&#x6599;&#x4F7F;&#x7528;602&#x529F;&#x80FD;&#x751F;&#x6210;&#x6807;&#x51C6;&#x7684;&#x5355;&#x80DE;</p>
+</li>
+<li><p>&#x4E4B;&#x540E;&#x505A;&#x51E0;&#x4F55;&#x4F18;&#x5316;&#xFF0C;&#x518D;&#x505A;&#x5355;&#x70B9;&#x7684;&#x81EA;&#x6D3D;&#x8BA1;&#x7B97;&#x83B7;&#x5F97;CHGCAR</p>
+</li>
+<li><p>&#x5728;&#x65B0;&#x7684;&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x9762;&#x8FD0;&#x884C;vaspkit302&#x83B7;&#x5F97;2D&#x7684;K&#x70B9;&#x8DEF;&#x5F84;&#xFF08;&#x786E;&#x8BA4;&#x7A7A;&#x95F4;&#x7FA4;&#xFF09;</p>
+</li>
+<li><p>KPATH.in&#x5305;&#x62EC;&#x4E86;&#x7EBF;&#x6A21;&#x5F0F;&#x7684;K&#x70B9;&#x8DEF;&#x5F84;&#xFF0C;&#x5C06;&#x5176;&#x76F4;&#x63A5;&#x590D;&#x5236;&#x6210;KPOINTS&#x5373;&#x53EF;&#xFF08;&#x9ED8;&#x8BA4;&#x63D2;20&#x4E2A;&#x70B9;&#xFF09;</p>
+</li>
+<li><p>HIGH_SYMMETRY_POINTS&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x9AD8;&#x5BF9;&#x79F0;&#x70B9;&#x7684;&#x4FE1;&#x606F;&#xFF0C;vaspkit&#x4E0D;&#x80FD;&#x786E;&#x4FDD;&#x751F;&#x6210;&#x7684;&#x8DEF;&#x5F84;&#x4E00;&#x5B9A;&#x5BF9;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x7167;seeK-path&#x7F51;&#x7AD9;&#x8FDB;&#x884C;&#x9A8C;&#x8BC1;&#xFF08;<a href="https://www.materialscloud.org/work/tools/seekpath" target="_blank">https://www.materialscloud.org/work/tools/seekpath</a>&#xFF09;</p>
+</li>
+<li><p>&#x8BFB;&#x53D6;&#x524D;&#x4E00;&#x6B65;&#x7684;CHGCAR&#x505A;&#x5355;&#x70B9;&#x8BA1;&#x7B97;</p>
+<p>&#x6848;&#x4F8B;&#x6587;&#x4EF6;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>##### initial I/O #####
+SYSTEM = MoS2  
+ICHARG = 11 
+LWAVE = .TRUE. 
+LCHARG = .TRUE.
+LVTOT = .FALSE.
+LVHAR = .FALSE.
+LELF = .FALSE. 
+LORBIT = 11 
+NEDOS = 1000 
+
+##### SCF #####
+ENCUT = 500
+ISMEAR = 0 
+SIGMA = 0.05
+EDIFF = 1E-6
+NELMIN = 5 
+NELM = 300 
+GGA = PE 
+LREAL = .FALSE.
+PREC = Accurate
+</code></pre></li>
+</ul>
+</blockquote>
+</li>
+<li><p>&#x540E;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ul>
+<li><p>&#x8BA1;&#x7B97;&#x540E;&#x4F7F;&#x7528;vaspkit&#x7684;21&#x529F;&#x80FD;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;<strong>211</strong>&#x83B7;&#x5F97;&#x57FA;&#x672C;&#x7684;Band Structure&#x3002;&#x5982;&#x679C;&#x6709;python&#x548C;matplotlib&#x5E93;&#x5219;&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x8F93;&#x51FA;band.png&#x56FE;&#x50CF;&#x3002;&#xFF08;&#x9ED8;&#x8BA4;&#x4E2D;Fermi&#x80FD;&#x7EA7;&#x88AB;&#x79FB;&#x5230;0 eV&#xFF09;</p>
+</li>
+<li><p>&#x5171;&#x8F93;&#x51FA;&#x4EE5;&#x4E0B;&#x6587;&#x4EF6;&#xFF1A;BAND.dat&#xFF0C;BAND_REFORMATTED.dat&#xFF0C;KLINES.dat&#xFF0C;KLABELS&#xFF0C;BAND_GAP</p>
+</li>
+<li><pre><code>BAND.dat`&#xFF0C;`BAND_REFORMATTED.dat
+</code></pre><p>&#x5305;&#x542B;band&#x7684;&#x57FA;&#x672C;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x7528;origin&#x6253;&#x5F00;</p>
+</li>
+<li><p>BAND_REFORMATTED.dat &#x7B2C;&#x4E00;&#x5217;&#x4E3A;K-Path&#x4FE1;&#x606F;&#xFF0C;&#x5355;&#x4F4D;A.&#x5176;&#x4F59;&#x7684;&#x5217;&#x4E3A;&#x6BCF;&#x4E2A;band&#x7684;&#x80FD;&#x91CF;</p>
+</li>
+<li><p>KLABELS&#x50A8;&#x5B58;&#x6BCF;&#x4E2A;&#x9AD8;&#x5BF9;&#x79F0;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;</p>
+</li>
+<li><p>BAND_GAP&#x50A8;&#x5B58;band gap &#x7684;&#x4FE1;&#x606F;</p>
+</li>
+<li><p>&#x5BF9;&#x4E8E;<strong>212&#xFF0C;213&#xFF0C;214</strong>&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x83B7;&#x5F97;&#x6295;&#x5F71;band structure&#x3002;&#xFF08;<strong>Note</strong>&#xFF1A;&#x9700;&#x8981;&#x786E;&#x4FDD;&#x5728;INCAR&#x4E2D;LORBIT = 10<code>or</code>LORBIT = 11&#x4F7F;&#x5176;&#x8F93;&#x51FA;&#x6295;&#x5F71;band structure&#xFF09;</p>
+<ul>
+<li>212&#x8F93;&#x51FA;&#x9009;&#x5B9A;&#x539F;&#x5B50;&#x7684;band structure&#xFF08;&#x6B64;&#x5904;&#x53EF;&#x6309;&#x5143;&#x7D20;&#x540D;&#x6307;&#x5B9A;&#xFF0C;&#x5982;&#xFF1A;C Fe &#x6216; &#x6309;&#x5143;&#x7D20;&#x7F16;&#x53F7;&#x6307;&#x5B9A;&#xFF0C;&#x5982;&#xFF1A;1-2&#xFF09;&#x3002;vaspkit&#x4F1A;&#x8F93;&#x51FA;&#x8FD9;&#x6837;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#xFF1A;<code>PBAND_A1.dat</code> and <code>PBAND_A2.dat</code>.&#x6BCF;&#x5217;&#x5206;&#x522B;&#x4E3A;&#x6BCF;&#x4E2A;&#x8F68;&#x9053;&#x7684;&#x80FD;&#x91CF;&#xFF0C;&#x6700;&#x540E;&#x4E3A;total&#x3002;</li>
+<li>213&#x8F93;&#x51FA;&#x6BCF;&#x4E2A;&#x539F;&#x5B50;&#x7684;band structure</li>
+<li>214&#x8F93;&#x51FA;&#x9009;&#x5B9A;&#x539F;&#x5B50;&#x6295;&#x5F71;band structure&#x7684;&#x603B;&#x548C;&#xFF08;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x8C03;&#x67E5;&#x5C42;&#x72B6;band&#x548C;&#x6BD4;&#x8F83;&#x8868;&#x9762;&#x952E;&#x4E0E;&#x5185;&#x90E8;&#x952E;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x9884;&#x5904;&#x7406;&#x8FC7;&#x7A0B;&#xFF08;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x7279;&#x5316;&#xFF09;</p>
+<ul>
+<li><p>&#x9664;&#x4E86;line-mode&#x7684;K&#x70B9;&#x8DEF;&#x5F84;&#xFF0C;vaspkit&#x4E5F;&#x751F;&#x6210;K&#x70B9;&#x95F4;&#x5747;&#x5300;&#x53D6;&#x6837;&#x7684;&#x7528;&#x4E8E;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x8BA1;&#x7B97;&#x3002;&#x8FD9;&#x6837;&#x7684;KPOINTS&#x5305;&#x542B;&#x4E24;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x4E2A;&#x548C;&#x4E0D;&#x53EF;&#x7EA6;&#x5E03;&#x91CC;&#x6E0A;&#x533A;&#x7684;K&#x70B9;&#x4E00;&#x6837;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x72EC;&#x7ACB;&#x4E8E;K-PAth&#x5916;&#x7684;&#x65E0;&#x6743;&#x91CD;&#x7684;K&#x70B9;&#x3002;</p>
+</li>
+<li><p>&#x6B65;&#x9AA4;&#x76F8;&#x4F3C;&#xFF1A;</p>
+<ul>
+<li><p>&#x51E0;&#x4F55;&#x4F18;&#x5316;&#xFF1A;302/303&#x751F;&#x6210;&#x6807;&#x51C6;&#x5316;&#x5355;&#x80DE;&#xFF0C;&#x7EBF;&#x72B6;k-path&#xFF0C;&#x5206;&#x6570;&#x5750;&#x6807;&#x7684;&#x9AD8;&#x5BF9;&#x79F0;&#x70B9;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;<strong>251</strong>&#x529F;&#x80FD;&#x751F;&#x6210;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x7528;KPOINTS&#xFF0C;&#x8F93;&#x5165;KPT&#x7684;&#x7EDD;&#x5BF9;&#x503C;&#x51B3;&#x5B9A;SCF&#x8BA1;&#x7B97;&#x7684;k&#x70B9;&#x91C7;&#x6837;&#x5BC6;&#x5EA6;&#x4EE5;&#x53CA;band structure&#x8BA1;&#x7B97;&#x7684;k-path&#x3002;&#x8BFB;&#x5165;&#x4E0A;&#x4E00;&#x6B65;&#x751F;&#x6210;&#x7684;KPATH.in&#x81EA;&#x52A8;&#x751F;&#x6210;KPOINTS&#x3002;</p>
+</li>
+<li><p>&#xFF08;&#x53EF;&#x9009;&#xFF09;&#x57FA;&#x4E8E;&#x65B0;&#x7684;KPOINTS&#x505A;&#x4E00;&#x4E2A;PBE SCF&#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x6CE2;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x88AB;&#x4E0B;&#x4E00;&#x6B65;&#x8BFB;&#x5165;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x4E0B;&#x4E00;&#x6B65;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x8BA1;&#x7B97;&#x65F6;&#x95F4;</p>
+</li>
+<li><p>&#x505A;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x8BA1;&#x7B97;</p>
+</li>
+<li><p>&#x6848;&#x4F8B;&#xFF1A;</p>
+<ul>
+<li>&#x4F18;&#x5316;&#x540E;&#xFF0C;&#x8FD0;&#x884C;302&#xFF0C;&#x5C06;&#x65E7;&#x7684;POSCAR&#x7528;&#x65B0;&#x7684;PRIMCELL.vasp&#x4EE3;&#x66FF;</li>
+<li>&#x8FD0;&#x884C;251&#xFF0C;&#x9009;&#x62E9; (1) Monkhorst-Pack Scheme or (2) Gamma Scheme&#x751F;&#x6210;SCF&#x6240;&#x9700;&#x7684;KPOINTS</li>
+</ul>
+<pre><code>251
+ --&gt;&gt; (1) Reading Structural Parameters from POSCAR File...
+ ======================= K-Mesh Scheme ==========================
+ 1) Monkhorst-Pack Scheme                            
+ 2) Gamma Scheme                                     
+
+ 0)   Quit                                             
+ 9)   Back                                             
+ -------------&gt;&gt;
+2
+ +-------------------------- Warm Tips --------------------------+
+ Input Resolution Value to Determine K-Mesh for SCF Calculation: 
+ (Typical Value: 0.03-0.04 is Generally Precise Enough)
+ ------------&gt;&gt;
+0.05
+ Input Resolution Value along K-Path for Band Calculation: 
+ (Typical Value: 0.02-0.04 for DFT and 0.04-0.06 for hybrid DFT)
+ ------------&gt;&gt;
+0.05
+ +---------------------------------------------------------------+
+ --&gt;&gt; (2) Reading K-Paths From KPATH.in File...
+ +-------------------------- Summary ----------------------------+
+ K-Mesh for SCF Calculation:    7    7    1
+ The Number of K-Point along K-Path 1:  22
+ The Number of K-Point along K-Path 2:  13
+ The Number of K-Point along K-Path 3:  26
+ +---------------------------------------------------------------+
+ --&gt;&gt; (3) Written KPOINTS File!
+</code></pre><p>Here, the resolution value of normal weighted K-Mesh and 0-weighted K-path is set to be 0.05. Output K-mesh for SCF Calculation: 7 7 1. And the number of k-points along each line of k-path: &#x393;&#x393;-&gt; M : 22, M -&gt; K : 13, K -&gt; &#x393;&#x393; : 26.</p>
+<ul>
+<li><p>&#x505A;PBE&#x8BA1;&#x7B97;</p>
+</li>
+<li><p>&#x505A;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#x8BA1;&#x7B97;&#xFF1A;INCAR&#x8BBE;&#x7F6E;&#x5982;&#x4E0B;&#xFF08;&#x7EC6;&#x8282;&#x53C2;&#x8003;<a href="http://blog.wangruixing.cn/2019/05/20/hse/&#xFF09;" target="_blank">http://blog.wangruixing.cn/2019/05/20/hse/&#xFF09;</a></p>
+<pre><code>##### initial I/O #####
+SYSTEM = Hybird Functional
+ISTART = 1 
+ICHARG = 1 
+LWAVE = .TRUE. 
+LCHARG = .TRUE.
+LVTOT = .FALSE.
+LVHAR = .FALSE.
+LELF = .FALSE. 
+LORBIT = 11 
+NEDOS = 1000
+
+##### SCF #####
+ENCUT = 500
+ISMEAR = 0 
+SIGMA = 0.05
+EDIFF = 1E-6
+NELMIN = 5 
+NELM = 300 
+GGA = PE 
+LREAL = .FALSE.
+# PREC = Accurate
+# ISYM = 3
+
+##### Geo opt #####
+EDIFFG = -0.01
+IBRION = 2
+POTIM = 0.2 
+NSW = 0 # no Geo_opt
+ISIF = 3  # 2 not optimize cell
+
+#### HSE ####
+LHFCALC = .TRUE. 
+AEXX   =  0.25        
+HFSCREEN = 0.2         
+ALGO = ALL # or Damped
+TIME   =  0.4
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x540E;&#x5904;&#x7406;&#xFF08;&#x5BF9;&#x6742;&#x5316;&#x6CDB;&#x51FD;&#xFF09;&#xFF1A;</p>
+<ul>
+<li>&#x4F7F;&#x7528;252&#x547D;&#x4EE4;&#x5BFC;&#x51FA;&#x952E;&#x6570;&#x636E;BAND.dat <code>and</code> BAND-REFORMATTED.dat&#x6587;&#x4EF6;&#xFF0C;&#x9AD8;&#x5BF9;&#x79F0;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x5B58;&#x5728;KLABELS&#x3002;</li>
+<li>&#x6295;&#x5F71;band structure&#x548C;&#x524D;&#x9762;&#x4E00;&#x6837;</li>
+</ul>
+</li>
+<li><p>&#x6709;&#x6548;&#x8D28;&#x91CF;&#x8BA1;&#x7B97;&#xFF1A;</p>
+<ul>
+<li><p>band structure&#x8FD1;&#x4F3C;&#xFF1A;$E(\mathbf{k})=E<em>{0}+\frac{\hbar^{2} \mathbf{k}^{2}}{2 m^{<em>}}$&#x4E8E;&#x662F;&#x53EF;&#x4EE5;&#x5F97;&#x5230;$\frac{1}{m^{</em>}}=\frac{1}{\hbar^{2}} \frac{\partial^{2} E}{\partial k</em>{i} \partial k_{j}}$ &#x3002;vaspkit&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x751F;&#x6210;KPOINTS&#x5E76;&#x8BA1;&#x7B97;&#x6709;&#x6548;&#x8D28;&#x91CF;&#xFF08;&#x4F46;&#x76EE;&#x524D;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x4E0D;&#x5E26;&#x7535;&#x8377;&#x4EE5;&#x53CA;&#x4E0D;&#x542B;&#x78C1;&#x6027;&#x7684;&#x534A;&#x5BFC;&#x4F53;&#x4F53;&#x7CFB;&#xFF09;</p>
+</li>
+<li><p>&#x6848;&#x4F8B;&#xFF1A;$\ce{MoS2}$&#x8BA1;&#x7B97;</p>
+<ul>
+<li><p>&#x4ECE;band structure&#x4E2D;&#x627E;&#x5230;&#x5E26;&#x8FB9;&#xFF0C;CBM&#x548C;VBM&#x5747;&#x5728;K&#x70B9;</p>
+</li>
+<li><p>&#x9009;&#x62E9;&#x4F4D;&#x7F6E;&#x505A;&#x4E8C;&#x9636;&#x5BFC;&#x6570;&#xFF1A;&#x8FD9;&#x91CC;&#x9009;&#x62E9;K -&gt; M, K -&gt; &#x393;&#x8BA1;&#x7B97;&#x7535;&#x5B50;&#x4E0E;&#x7A7A;&#x7A74;&#x7684;&#x6709;&#x6548;&#x8D28;&#x91CF;</p>
+</li>
+<li><p>&#x51C6;&#x5907;POSCAR&#x548C;VPKIT.in&#xFF1A;</p>
+<pre><code>1        # &quot;1&quot; for pre-process (generate KPOINTS), &quot;2&quot; for post-process(calculate m*)
+6        # number of points for quadratic function fitting.
+0.015    # k-cutoff, unit &#xC5;-1.
+2        # number of tasks for effective mass calculation
+0.333333 0.3333333 0.000 0.000 0.000 0.000 K-&gt;&#x393; # Specified two K-points and direction
+0.333333 0.3333333 0.000 0.500 0.000 0.000 K-&gt;M # Specified two K-points and direction
+</code></pre></li>
+<li><p>vaspkit&#x4E2D;&#x8FD0;&#x884C;912&#xFF0C;&#x8F93;&#x5165;K-mesh&#x7684;&#x53C2;&#x6570;&#xFF0C;vaspkit&#x4F1A;&#x81EA;&#x52A8;&#x751F;&#x6210;KPOINTS&#x6587;&#x4EF6;&#x57FA;&#x4E8E;VPKIT.in&#x6587;&#x4EF6;&#xFF08;2-Gamma&#xFF0C;0.04&#xFF09;</p>
+</li>
+<li><p>&#x63D0;&#x4EA4;vasp&#x4EFB;&#x52A1;</p>
+</li>
+<li><p>&#x6539;&#x53D8;VPKIT&#x6587;&#x4EF6;&#x7B2C;&#x4E00;&#x884C;&#x4E3A;2&#xFF08;post-process&#xFF09;&#x91CD;&#x65B0;&#x8FD0;&#x884C;913</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x80FD;&#x5E26;&#x89E3;&#x6298;&#x53E0;&#xFF08;band-unfolding&#xFF09;</p>
+<ul>
+<li><p>&#x5408;&#x91D1;&#x548C;&#x7F3A;&#x9677;&#x6750;&#x6599;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x7528;&#x8D85;&#x80DE;&#x8BA1;&#x7B97;&#xFF0C;&#x4E3A;&#x4E86;&#x6BD4;&#x8F83;&#x5355;&#x80DE;&#x4E0E;&#x8D85;&#x80DE;&#x7684;&#x952E;&#x8BA1;&#x7B97;&#xFF0C;&#x80FD;&#x5E26;&#x9700;&#x8981;&#x88AB;&#x89E3;&#x6298;&#x53E0;&#x4E3A;&#x6709;&#x6548;band structure</p>
+</li>
+<li><p>&#x4F8B;&#x5982;&#xFF1A;Graphene</p>
+<ul>
+<li><p>&#x51C6;&#x5907;POSCAR</p>
+</li>
+<li><p>&#x51C6;&#x5907;KPATH.in&#xFF08;&#x5BF9;&#x4E8E;2D&#x6750;&#x6599;&#x53EF;&#x7528;301/302/303&#xFF09;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;401&#x521B;&#x5EFA;2*2&#x8D85;&#x80DE;&#xFF0C;&#x6539;SC221.vasp&#x4E3A;POSCAR&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7684;VPKIT.in&#x6587;&#x4EF6;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x884C;&#x8F93;&#x5165;&#x8D85;&#x80DE;&#x5C3A;&#x5BF8;&#x6570;&#x636E; </p>
+<pre><code>2 2 1
+</code></pre></li>
+<li><p>&#x8FD0;&#x884C;281&#x751F;&#x6210;KPOINTS&#x7528;&#x4E8E;&#x8D85;&#x80DE;&#x8BA1;&#x7B97;&#xFF08;2&#xFF0C;0.03&#xFF09;</p>
+</li>
+<li><p>&#x8FD0;&#x884C;vasp</p>
+</li>
+<li><p>&#x8FD0;&#x884C;282&#x5BFC;&#x51FA;EBS.dat</p>
+</li>
+<li><p>&#x7ED8;&#x5236;&#x56FE;&#x50CF;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3D Band Structure&#xFF1A;</p>
+<ul>
+<li>&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x9762;&#x4E0A;&#x7684;K&#x70B9;&#xFF0C;&#x8BA1;&#x7B97;&#x8FD9;&#x4E9B;K&#x70B9;&#x4E0A;&#x7684;&#x80FD;&#x5E26;&#x80FD;&#x91CF;</li>
+<li>&#x4F8B;&#x5B50;&#xFF1A;Graphene<ul>
+<li>&#x51C6;&#x5907;POSCAR&#xFF08;relaxed&#xFF09;&#x548C;INCAR&#x7528;&#x4E8E;SCF&#x8BA1;&#x7B97;&#xFF08;&#x5982;&#x7B2C;&#x4E00;&#x8282;&#xFF09;</li>
+<li>&#x8FD0;&#x884C;231&#x751F;&#x6210;KPOINTS &#xFF08;0.015&#xFF09;</li>
+<li>&#x63D0;&#x4EA4;vasp</li>
+<li>&#x8BA1;&#x7B97;&#x5B8C;&#x540E;&#xFF0C;&#x8FD0;&#x884C;232&#x6216;233</li>
+<li>&#x8FD0;&#x884C;python VASPKITdir/examples/3D_band/how_to_visual.py&#x5F97;&#x5230;&#x56FE;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Fermi&#x9762;&#xFF1A;</p>
+<ul>
+<li>&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x7269;&#x7406;&#x542B;&#x4E49;&#x4E3A;0K&#x4E0B;&#xFF0C;&#x533A;&#x5206;&#x5360;&#x636E;band&#x4E0E;&#x672A;&#x5360;&#x636E;band&#x7684;&#x9762;</li>
+<li>&#x4F8B;&#x5B50;&#xFF1A;Cu Fermi surface<ul>
+<li>&#x4F18;&#x5316;Cu&#x7ED3;&#x6784;&#xFF0C;&#x5FC5;&#x987B;&#x662F;&#x5355;&#x80DE;</li>
+<li>&#x8FD0;&#x884C;vaspkit&#x8F93;&#x5165;261&#x751F;&#x6210;K&#x70B9;&#x4E0E;POTCAR&#x7528;&#x4E8E;&#x8BA1;&#x7B97;Fermi&#x9762;&#xFF08;kPT~0.008&#xFF09;</li>
+<li>&#x63D0;&#x4EA4;vasp&#x4EFB;&#x52A1;</li>
+<li>&#x8FD0;&#x884C;262&#xFF0C;&#x751F;&#x6210;FERMISURFACE.bxsf</li>
+<li>XcrySDen</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="8-2.html" class="navigation navigation-prev " aria-label="Previous page: 输入文件生成">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="8-4.html" class="navigation navigation-next " aria-label="Next page: 计算DOS">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"计算Band Structure","level":"1.9.3","depth":2,"next":{"title":"计算DOS","level":"1.9.4","depth":2,"path":"Chapter8/8-4.md","ref":"Chapter8/8-4.md","articles":[]},"previous":{"title":"输入文件生成","level":"1.9.2","depth":2,"path":"Chapter8/8-2.md","ref":"Chapter8/8-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter8/8-3.md","mtime":"2020-03-27T08:16:59.094Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T11:33:36.467Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
