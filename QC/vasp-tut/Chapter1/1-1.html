@@ -1,0 +1,450 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>General VASP version · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="1-2.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Chapter 1 Installation & Preparation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    General VASP version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    VASP+VTST Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    Chapter 2  Vasp Input & Output File
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
+            
+                <a href="../Chapter2/2-1.html">
+            
+                    
+                    INCAR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
+            
+                <a href="../Chapter2/2-2.html">
+            
+                    
+                    other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Chapter 3 Convergence & Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >General VASP version</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="general-vasp-version">General VASP version</h1>
+<ul>
+<li><p>step 1: Install interpreter</p>
+<p>Here, the most convenient interpreter is Intel MKL (including in Intel Parallel Studio, which have a install GUI)</p>
+<pre><code class="lang-bash"><span class="hljs-comment"># Download Intel Parallel from website</span>
+<span class="hljs-comment"># Unzip</span>
+./install.sh (following the automatic guide, the only important things is memorizing you install path and whether you install <span class="hljs-keyword">for</span> All user <span class="hljs-keyword">in</span> this computer)
+<span class="hljs-comment"># Add Executable file to System PATH </span>
+vi ~/.bashrc
+<span class="hljs-built_in">source</span> /<span class="hljs-built_in">export</span>/home/cluser1/intel/composerxe/bin/compilervars.sh intel64
+<span class="hljs-built_in">export</span> PATH=/<span class="hljs-built_in">export</span>/home/cluser1/intel/composerxe/bin:<span class="hljs-variable">$PATH</span>
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/<span class="hljs-built_in">export</span>/home/cluser1/intel/composerxe/mkl/lib/intel64:<span class="hljs-variable">$LD_LIBRARY_PATH</span>
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/<span class="hljs-built_in">export</span>/home/cluser1/intel/lib/intel64:<span class="hljs-variable">$LD_LIBRARY_PATH</span>
+<span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
+</li>
+<li><p>step 2: Install parallel tools (like openmpi)</p>
+<pre><code class="lang-bash"><span class="hljs-comment">#Download openmpi package</span>
+<span class="hljs-comment">#Unzip</span>
+./configure --prefix=installpath CC=icc CXX=icpc F77=ifort FC=ifort
+make -j4
+make install
+<span class="hljs-comment"># Add Executable file to System PATH </span>
+vi ~/.bashrc
+<span class="hljs-built_in">export</span> PATH=/<span class="hljs-built_in">export</span>/home/cluser1/openmpi-1.6.5-intel-v12.1.5/bin:<span class="hljs-variable">$PATH</span>
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/<span class="hljs-built_in">export</span>/home/cluser1/openmpi-1.6.5-intel-v12.1.5/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span>
+<span class="hljs-built_in">export</span> MANPATH=/<span class="hljs-built_in">export</span>/home/cluser1/openmpi-1.6.5-intel-v12.1.5/share/man:<span class="hljs-variable">$MANPATH</span>
+<span class="hljs-built_in">source</span> ~/.bashrc
+<span class="hljs-comment">#check</span>
+<span class="hljs-built_in">which</span> mpif90
+</code></pre>
+</li>
+<li><p>step 3: Install fftw-3.3.4</p>
+<pre><code class="lang-bash">./configure --prefix=installpath --enable-mpi
+make
+make install
+vi ~/.bashrc
+<span class="hljs-built_in">export</span> PATH=/<span class="hljs-built_in">export</span>/home/cluser1/fftw/bin:<span class="hljs-variable">$PATH</span>
+<span class="hljs-built_in">export</span> LD_LIBRARY_PATH=/<span class="hljs-built_in">export</span>/home/cluser1/fftw/lib:<span class="hljs-variable">$LD_LIBRARY_PATH</span>
+<span class="hljs-built_in">source</span> ~/.bashrc
+</code></pre>
+</li>
+<li><p>step 4: Install vasp</p>
+<pre><code class="lang-bash"><span class="hljs-comment">#edit makefile.include</span>
+<span class="hljs-comment"># Precompiler options</span>
+<span class="hljs-comment">#CPP_OPTIONS= -DMPI -DHOST=\&quot;IFC91_ompi\&quot; -DIFC \</span>
+             -DCACHE_SIZE=4000 -DPGF90 -Davoidalloc \
+             -DMPI_BLOCK=8000 -DscaLAPACK -Duse_collective \
+             -DnoAugXCmeta -Duse_bse_te \
+             -Duse_shmem -Dtbdyn
+CPP_OPTIONS= -DMPI -DHOST=\<span class="hljs-string">&quot;LinuxIFC\&quot; -DIFC \
+             -DCACHE_SIZE=8000 -DPGF90 -Davoidalloc \
+             -DMPI_BLOCK=8000 -DscaLAPACK -Duse_collective \
+             -DnoAugXCmeta -Duse_bse_te \
+             -Duse_shmem -Dtbdyn -DRPROMU_DGEMV -DRACCMU_DGEMV
+
+CPP        = fpp -f_com=no -free -w0  $*<span class="hljs-variable">$(FUFFIX)</span> $*<span class="hljs-variable">$(SUFFIX)</span> <span class="hljs-variable">$(CPP_OPTIONS)</span>
+
+FC         = mpif90
+FCL        = mpif90 -mkl
+
+FREE       = -free -names lowercase
+
+#FFLAGS     = -assume byterecl
+FFLAGS     = -assume byterecl -FR -heap-arrays
+#OFLAG      = -O2
+OFLAG      = -O1 -ip
+OFLAG_IN   = <span class="hljs-variable">$(OFLAG)</span>
+#DEBUG      = -O0
+DEBUG      = -O0 -FR
+
+MKLROOT    =/export/home/cluser1/intel/mkl
+MKL_PATH   = <span class="hljs-variable">$(MKLROOT)</span>/lib/intel64
+BLAS       =-L<span class="hljs-variable">$(MKL_PATH)</span> -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread
+LAPACK     =-L<span class="hljs-variable">$(MKL_PATH)</span> -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread
+#BLACS      = -lmkl_blacs_openmpi_lp64
+BLACS      =-L<span class="hljs-variable">$(MKL_PATH)</span> -lmkl_blacs_openmpi_lp64
+SCALAPACK  = <span class="hljs-variable">$(MKL_PATH)</span>/libmkl_scalapack_lp64.a <span class="hljs-variable">$(MKL_PATH)</span>/libmkl_scalapack_ilp64.a <span class="hljs-variable">$(BLACS)</span>
+
+#OBJECTS    = fftmpiw.o fftmpi_map.o fftw3d.o fft3dlib.o \
+             <span class="hljs-variable">$(MKLROOT)</span>/interfaces/fftw3xf/libfftw3xf_intel.a
+OBJECTS    = fftmpiw.o fftmpi_map.o fftw3d.o fft3dlib.o /export/home/cluser1/fftw/lib/libfftw3_mpi.a
+INCS       =-I/export/home/cluser1/fftw/include
+
+LLIBS      = <span class="hljs-variable">$(SCALAPACK)</span> <span class="hljs-variable">$(LAPACK)</span> <span class="hljs-variable">$(BLAS)</span>
+
+OBJECTS_O1 += fft3dfurth.o fftw3d.o fftmpi.o fftmpiw.o
+OBJECTS_O2 += fft3dlib.o
+
+# For what used to be vasp.5.lib
+CPP_LIB    = <span class="hljs-variable">$(CPP)</span>
+FC_LIB     = <span class="hljs-variable">$(FC)</span>
+CC_LIB     = icc
+CFLAGS_LIB = -O
+FFLAGS_LIB = -O1
+FREE_LIB   = <span class="hljs-variable">$(FREE)</span>
+
+OBJECTS_LIB= linpack_double.o getshmem.o
+
+# Normally no need to change this
+SRCDIR     = ../../src
+BINDIR     = ../../bin
+
+#Watch out!!!!
+#Here we should only edit the following part and change them to the actual path where you install other packages.
+MKLROOT    =/export/home/cluser1/intel/mkl
+OBJECTS    = fftmpiw.o fftmpi_map.o fftw3d.o fft3dlib.o /export/home/cluser1/fftw/lib/libfftw3_mpi.a
+INCS       =-I/export/home/cluser1/fftw/include
+BLACS      =-L<span class="hljs-variable">$(MKL_PATH)</span> -lmkl_blacs_openmpi_lp64
+
+make all
+</span></code></pre>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Chapter 1 Installation & Preparation">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="1-2.html" class="navigation navigation-next " aria-label="Next page: VASP+VTST Installation">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"General VASP version","level":"1.2.1","depth":2,"next":{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"path":"Chapter1/1-2.md","ref":"Chapter1/1-2.md","articles":[]},"previous":{"title":"Chapter 1 Installation & Preparation","level":"1.2","depth":1,"path":"Chapter1/README.md","ref":"Chapter1/README.md","articles":[{"title":"General VASP version","level":"1.2.1","depth":2,"path":"Chapter1/1-1.md","ref":"Chapter1/1-1.md","articles":[]},{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"path":"Chapter1/1-2.md","ref":"Chapter1/1-2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/1-1.md","mtime":"2020-03-27T04:33:55.640Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T06:08:48.559Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

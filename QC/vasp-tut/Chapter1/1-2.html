@@ -1,0 +1,399 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>VASP+VTST Installation · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Chapter2/" />
+    
+    
+    <link rel="prev" href="1-1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Chapter 1 Installation & Preparation
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="1-1.html">
+            
+                <a href="1-1.html">
+            
+                    
+                    General VASP version
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="1-2.html">
+            
+                <a href="1-2.html">
+            
+                    
+                    VASP+VTST Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Chapter2/">
+            
+                <a href="../Chapter2/">
+            
+                    
+                    Chapter 2  Vasp Input & Output File
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Chapter2/2-1.html">
+            
+                <a href="../Chapter2/2-1.html">
+            
+                    
+                    INCAR
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Chapter2/2-2.html">
+            
+                <a href="../Chapter2/2-2.html">
+            
+                    
+                    other
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Chapter3/">
+            
+                <a href="../Chapter3/">
+            
+                    
+                    Chapter 3 Convergence & Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >VASP+VTST Installation</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="vaspvtst-installation">VASP+VTST Installation</h1>
+<p>Note: VASP+VTST Installation</p>
+<ol>
+<li><p>set <strong>VTST</strong>:</p>
+<p>&#x5C06;vtstcode&#x4E2D;&#x7684;&#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;vasp&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x7684;src&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;src&#x76EE;&#x5F55;&#x4E0B;&#x5B58;&#x5728;chain.F&#xFF0C;&#x5EFA;&#x8BAE;&#x5148;&#x5907;&#x4EFD;chain.F</p>
+<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> vasp.5.4.4 
+cp src/chain.F src/chain.F-org
+</code></pre>
+<pre><code class="lang-bash">cp ../vtstcode-178/* src/
+</code></pre>
+<p>&#x4FEE;&#x6539;src/main.F&#x6E90;&#x7801;</p>
+<p>&#x5C06;&#xFF08;&#x7B2C;3146&#x884C;&#xFF09;</p>
+<pre><code>CALL CHAIN_FORCE(T_INFO%NIONS,DYN%POSION,TOTEN,TIFOR, &amp;
+     LATT_CUR%A,LATT_CUR%B,IO%IU6)
+</code></pre><p>&#x53D8;&#x4E3A;&#xFF1A;</p>
+<pre><code>CALL CHAIN_FORCE(T_INFO%NIONS,DYN%POSION,TOTEN,TIFOR, &amp;
+      TSIF,LATT_CUR%A,LATT_CUR%B,IO%IU6)
+!     LATT_CUR%A,LATT_CUR%B,IO%IU6)
+</code></pre><p>&#x4FEE;&#x6539;&#x7F16;&#x8BD1;&#x914D;&#x7F6E;src/.objects&#xFF0C;&#x5728;chain.o&#x524D;&#xFF08;&#x5927;&#x6982;&#x7B2C;72&#x884C;&#xFF09;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code>bfgs.o dynmat.o instanton.o lbfgs.o sd.o cg.o dimer.o bbm.o \
+fire.o lanczos.o neb.o qm.o opt.o \
+</code></pre></li>
+<li><p><strong>&#x67E5;&#x770B;&#x6240;&#x7528;&#x7F16;&#x8F91;&#x5668;&#x3001;IntelMPI&#x73AF;&#x5883;&#x548C;IntelMKL&#x73AF;&#x5883;</strong></p>
+<pre><code>which ifort
+echo $MKLROOT
+which mpiifort
+</code></pre></li>
+<li><p>&#x4FEE;&#x6539;makefile.include&#x6587;&#x4EF6;</p>
+<p>&#x7528;<code>arch/makefile.include.linux_intel</code>&#x505A;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x4FEE;&#x6539;</p>
+<pre><code class="lang-bash">cp arch/makefile.include.linux_intel makefile.include
+</code></pre>
+<p>&#x5BF9;makefile.include&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x5982;&#x4E0B;&#x4FEE;&#x6539;&#xFF0C;14&#x884C;&#x5F00;&#x59CB;&#x7F16;&#x8BD1;&#x5668;&#x914D;&#x7F6E;&#x6539;&#x4E3A;</p>
+<pre><code>FC         = mpiifort
+FCL        = mpiifort -mkl
+</code></pre><p>23&#x884C;&#x5F00;&#x59CB;,&#x6570;&#x5B66;&#x5E93;&#x914D;&#x7F6E;&#x6539;&#x4E3A;</p>
+<pre><code class="lang-bash">MKLROOT=/opt/intel/compilers_and_libraries_2018.3.222/linux/mkl
+MKL_PATH   = $(MKLROOT)/lib/intel64
+BLAS       =-L$(MKL_PATH) -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread
+LAPACK     =-L$(MKL_PATH) -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread
+BLACS      =-L$(MKL_PATH) -lmkl_blacs_intelmpi_lp64
+SCALAPACK  = $(MKL_PATH)/libmkl_scalapack_lp64.a $(BLACS)
+</code></pre>
+<p>30&#x884C;&#xFF0C;&#x914D;&#x7F6E;&#x4E3A;(&#x5176;&#x4E2D;/opt/fftw&#x662F;&#x6211;&#x7F16;&#x8BD1;&#x540E;&#x5B89;&#x88C5;&#x7684;&#x76EE;&#x5F55;)</p>
+<pre><code>OBJECTS    = fftmpiw.o fftmpi_map.o fftw3d.o fft3dlib.o \
+           /opt/fftw/lib/libfftw3_mpi.a
+INCS       =-I/opt/fftw/include
+</code></pre></li>
+<li><p><strong>&#x5B89;&#x88C5;</strong></p>
+<pre><code class="lang-bash">make veryclean
+make
+<span class="hljs-built_in">export</span> PATH=/home/lwl/soft/vasp:<span class="hljs-variable">$PATH</span>
+mkdir ~/soft/vtst
+cp -rf /home/lwl/&#x684C;&#x9762;/vtstscripts-937 ~/soft/vtst
+<span class="hljs-built_in">export</span> PATH=/home/lwl/soft/vtst/vtstscripts-937:<span class="hljs-variable">$PATH</span>
+
+<span class="hljs-comment">#test</span>
+nebmake.pl n fin 7
+</code></pre>
+<ul>
+<li>Reference: <a href="https://blog.csdn.net/lwl_666/article/details/86628985" target="_blank">https://blog.csdn.net/lwl_666/article/details/86628985</a></li>
+</ul>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="1-1.html" class="navigation navigation-prev " aria-label="Previous page: General VASP version">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Chapter2/" class="navigation navigation-next " aria-label="Next page: Chapter 2  Vasp Input & Output File">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"VASP+VTST Installation","level":"1.2.2","depth":2,"next":{"title":"Chapter 2  Vasp Input & Output File","level":"1.3","depth":1,"path":"Chapter2/README.md","ref":"Chapter2/README.md","articles":[{"title":"INCAR","level":"1.3.1","depth":2,"path":"Chapter2/2-1.md","ref":"Chapter2/2-1.md","articles":[]},{"title":"other","level":"1.3.2","depth":2,"path":"Chapter2/2-2.md","ref":"Chapter2/2-2.md","articles":[]}]},"previous":{"title":"General VASP version","level":"1.2.1","depth":2,"path":"Chapter1/1-1.md","ref":"Chapter1/1-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Chapter1/1-2.md","mtime":"2020-03-27T04:34:20.966Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-27T06:08:48.559Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
