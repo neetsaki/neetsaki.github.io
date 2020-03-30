@@ -7,7 +7,7 @@
     function password() {
     var testV = 1;
     var pass1 = prompt('Please input the room owner name!','');
-    while (testV < 3) {
+    while (testV < 100) {
     if (!pass1)
     history.go(-1);
     if (pass1 == "Inabahu") {
@@ -17,9 +17,8 @@
     var pass1 =
     prompt('Password error!');
     }
-    if (pass1!="password" & testV ==3)
+    if (pass1!="password" & testV ==100)
     history.go(-2);
-    window.close();
     return " ";
     }
     document.write(password());
