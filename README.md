@@ -5,7 +5,7 @@
 This blog is used to record learning history of Quantum calculation & new programming languages.
 ### Quantum Chemistry
   - [Basic theory](./QC/Basic_theory.html)
-  - [V tutorial](./QC/vasp-tut/index.html)
+  - [VASP tutorial](./QC/vasp-tut/index.html)
   - [Material Studio (MS) tutorial](./QC/MS_tutorial.html)
   - Cp2k tutorial
   - Quantum Expresso (QE) tutorial
