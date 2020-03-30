@@ -13,15 +13,24 @@
     <script src="https://cdn.jsdelivr.net/gh/neetsaki/live2d-widget/autoload.js"></script>
     <script language="JavaScript">
     <!--
-    var password="";
-    password=prompt('请输入密码 (本网站需输入密码才可进入):','');
-    if (password != '2613')
-        {
-            alert("密码不正确,无法进入本站!!");
-            window.opener=null;
-            window.close();
-        }  // 密码不正确就关闭
-    -->
+    function password() {
+    var testV = 1;
+    var pass1 = prompt('Please input the password!','');
+    while (testV < 3) {
+    if (!pass1)
+    history.go(-1);
+    if (pass1 == "2613") {
+    break;
+    }
+    testV+=1;
+    var pass1 =
+    prompt('Password error!');
+    }
+    if (pass1!="password" & testV ==3)
+    history.go(-1);
+    return " ";
+    }
+    document.write(password());
     </script>
 </head>
 
